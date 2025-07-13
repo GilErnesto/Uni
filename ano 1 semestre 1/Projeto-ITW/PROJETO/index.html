@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Olimpiadas 2024</title>
+    <!-- Link Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Link para KnockoutJS -->
+    <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/knockout.js"></script>
+    <!-- Link para Jquery e Ajax -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link para o CSS do Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Links para página css e js -->
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="Universal/Navbar.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light border-bottom-0">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+
+                <!-- Botão do Hamburger -->
+                <button id="tooglebutton" class="navbar-toggler" onclick="ativar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Logo no Centro -->
+                <a class="navbar-brand mx-auto position-absolute" href="index.html">
+                    <img src="imagens/simbolo-olimpiadas-removebg-preview.png" type="logo" id="logo" alt="logo" />
+                </a>
+
+                <!-- Menu colapsável -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                    <ul class="navbar-nav w-100 d-flex justify-content-between">
+                        <!-- esquerda -->
+                        <li class="nav-item rounded-button">
+                            <a class="nav-link icone-anel" href="modalidades.html"><i class="fa-regular fa-circle"></i> Modalidades</a>
+                        </li>
+                        <li class="nav-item dropdown rounded-button">
+                            <a class="dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ship"></i> Geral</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="noc.html"><i class="fa-solid fa-flag"></i> Comitivas</a></li>
+                                <li><a class="dropdown-item" href="atletas.html"><i class="fa-solid fa-user"></i> Atletas</a></li>
+                                <li><a class="dropdown-item" href="treinadores.html"><i class="fa-solid fa-user-tie"></i> Treinadores</a></li>
+                                <li><a class="dropdown-item" href="tof.html"><i class="fa-solid fa-robot"></i> Árbitros</a></li>
+                                <li><a class="dropdown-item" href="estadios.html"><i class="fa-solid fa-map-location-dot"></i> Estádios | Espaços</a></li>
+                                <li><a class="dropdown-item" href="competicao.html"><i class="fa-regular fa-flag"></i> Competições</a></li>                                
+                                <li><a class="dropdown-item" href="equipas.html"><i class="fa-solid fa-people-group"></i> Equipas</a></li>
+
+                            </ul>
+                        </li>
+                        <!-- direita -->
+                            <li class="nav-item dropdown rounded-button">
+                            <a class="dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown"><i class="fa-solid fa-bars"></i></i> Outros</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tocha.html"><i class="fa-solid fa-fire"></i> Tocha Olímpica</a></li>
+                                <li><a class="dropdown-item" href="medals.html"><i class="fa-solid fa-medal"></i> Medalhas</a></li>
+                                <li><a class="dropdown-item" href="shop.html"><i class="fa-solid fa-basket-shopping"></i> Loja</a></li>
+                                <li><a class="dropdown-item" href="basketball.html"><i class="fa-solid fa-basketball"></i> Basketball Detalhes</a></li>
+                                <li><a class="dropdown-item" href="favoritos.html"><i class="fa-solid fa-heart"></i></i> Favoritos</a></li>
+                            </ul>
+                        </li>
+
+                <!-- Switch Dark mode -->
+                <ul class="navbar-nav switch-container rounded-button" id="bd-theme">
+                    <li class="nav-item">
+                        <div class="nav-link" type="button" data-bs-theme-value="light" aria-pressed="false">
+                            <i class="theme-icon fa fa-sun" title="Modo claro"></i>
+                        </div>
+                    </li>
+                    <li class="navbar-text hstack"><div class="vr"></div></li>
+                    <li class="nav-item">
+                        <div class="nav-link" type="button" data-bs-theme-value="dark" aria-pressed="false">
+                            <i class="theme-icon fa fa-moon" title="Modo escuro"></i>
+                        </div>
+                    </li>
+                </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carousel -->
+    <div id="olimpics" class="carousel slide">
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" id="imagem1"></div>
+            <div class="carousel-item" id="imagem2"></div>
+            <div class="carousel-item" id="imagem3"></div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#olimpics" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#olimpics" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+<!-- START: Anime shenanigans -->
+<div class="my-5 d-flex justify-content-center">
+    <svg
+      class="animate"
+      xmlns="http://www.w3.org/2000/svg"
+      height="158"
+      width="342"
+    >
+      <g stroke-width="9.5" stroke="#000" fill="none">
+        <circle cx="54" cy="54" r="49.25" stroke="#0081c8" />
+        <circle cx="171" cy="54" r="49.25" />
+        <circle cx="288" cy="54" r="49.25" stroke="#ee334e" />
+        <circle cx="112.5" cy="104" r="49.25" stroke="#fcb131" />
+        <circle cx="229.5" cy="104" r="49.25" stroke="#00a651" />
+        <path d="M93.4,24.45A49.25,49.25 0 0 1 93.4,83.55" stroke="#0081c8" />
+        <path
+          d="M210.4,24.45A49.25,49.25 0 0 1 210.4,83.55M171,103.25A49.25,49.25 0 0 1 141.45,93.4"
+        />
+        <path
+          d="M288,103.25A49.25,49.25 0 0 1 258.45,93.4"
+          stroke="#ee334e"
+        />
+      </g>
+    </svg>
+  </div>
+  <!-- END: Anime shenanigans -->
+
+<h2><i class="fa-solid fa-ranking-star"></i> Outras Olimpíadas <i class="fa-solid fa-fire-flame-curved"></i></h2>
+<div class="col-md-12">
+    <!-- Spied element -->
+    <div data-mdb-spy="scroll" data-mdb-target="#scrollspy1" data-mdb-offset="0" class="scrollspy-example">
+        <section id="summerTorch" class="text-white scrollspy-section">
+            <div class="card-container">
+                <div class="card">
+                    <a href="https://olympics.com/en/olympic-games/sydney-2000" target="_blank">
+                        <h3 class="title">Sydney 2000</h3>
+                    </a>
+                    <div class="bar">
+                        <div class="" style="display:flex;justify-content:center; margin:10px 0;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglqV5wgOmY92fMS9GDoRj7a8nc-vavX1BLXf5Wuzgt1R2YAil4WhVOoxu1BMdvFdnEaVLEnN07c2ZZuza4yw37nd7W02xJ2mqA3qsJM97E8GExCc4tBEP7hn8XuFlslH19BibD1N_ywLlr/s1600/2000s.jpg" height="200px">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://olympics.com/en/olympic-games/athens-2004" target="_blank">
+                        <h3 class="title">Athens 2004</h3>
+                    </a>
+                    <div class="bar">
+                        <div class="" style="display:flex;justify-content:center; margin:10px 0;">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5ymif7AG5Cb9mTiLVRJ1nUQ2qRp90BPyRPQ&s" height="200px">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://olympics.com/en/olympic-games/beijing-2008" target="_blank">
+                        <h3 class="title">Beijing 2008</h3>
+                    </a>
+                    <div class="bar">
+                        <div class="emptybar"></div>
+                        <div class="filledbar"></div>
+                        <div class="" style="display:flex;justify-content:center; margin:10px 0;">
+                            <img src="https://www.clicrbs.com.br/rbs/image/2874609.jpg" height="200px">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://olympics.com/en/olympic-games/london-2012" target="_blank">
+                        <h3 class="title">London 2012</h3>
+                    </a>
+                    <div class="bar">
+                        <div class="emptybar"></div>
+                        <div class="filledbar"></div>
+                        <div class="" style="display:flex;justify-content:center; margin:10px 0;">
+                            <img src="https://images.virgula.me/2011/06/08/249683-1200x1601.jpg" height="200px">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://olympics.com/en/olympic-games/rio-2016" target="_blank">
+                        <h3 class="title">Rio 2016</h3>
+                    </a>
+                    <div class="bar">
+                        <div class="emptybar"></div>
+                        <div class="filledbar"></div>
+                        <div class="" style="display:flex;justify-content:center; margin:10px 0;">
+                            <img src="https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2015/07/03/tochario2016budamendesgetty.jpg" height="200px">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://olympics.com/en/olympic-games/tokyo-2020" target="_blank">
+                        <h3 class="title">Tokyo 2020</h3>
+                    </a>
+                    <div class="bar">
+                        <div class="emptybar"></div>
+                        <div class="filledbar"></div>
+                        <div class="" style="display:flex;justify-content:center; margin:10px 0;">
+                            <img src="https://thumbs.dreamstime.com/b/prot%C3%B3tipo-da-tocha-ol%C3%ADmpica-de-jogos-tokyo-que-mostra-o-mecanismo-igni%C3%A7%C3%A3o-por-fogo-interior-japan-nov-interno-detalhado-um-322539040.jpg" height="200px">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://olympics.com/en/olympic-games/paris-2024" target="_blank">
+                        <h3 class="title">Paris 2024</h3>
+                    </a>
+                    <div class="bar">
+                        <div class="emptybar"></div>
+                        <div class="filledbar"></div>
+                        <div class="" style="display:flex;justify-content:center; margin:10px 0;">
+                            <img src="https://s2-ge.glbimg.com/iTzNMyHxwKTZlkeDD0N8s2RXSdw=/0x0:2791x4961/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2023/e/Q/onpRuxRuekIdhU7RSTTQ/paris2024-3d-visual-paralympic-games-torch-story.jpg.jpg" height="200px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+    <!-- Outras páginas -->
+    <div class="container">
+        <div class="header">
+            <h1>Destaques</h1>
+        </div>
+
+        <div class="highlights">
+            <!-- Destaque Principal -->
+            <div class="highlight">
+                <img src="https://dims.apnews.com/dims4/default/861321c/2147483647/strip/true/crop/5824x3883+0+0/resize/1440x960!/format/webp/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fd7%2Ff2%2Fdac4f171d7e209ea0aed37d0eac7%2F626e7cbfafad4bd2beb6aec1883f5215" alt="Imagem Principal">
+                <div class="highlight-category">Fotos</div>
+                <div class="highlight-title">
+                    <a href="fotos.html">Top 6 fotos dos Jogos Olímpicos de 2024</a>
+                </div>
+            </div>
+
+            <!-- Destaque Secundário -->
+            <div class="highlight">
+                <img src="https://img.olympics.com/images/image/private/t_16-9_1280/f_auto/primary/k7avcsaskcwjkz88yzea" alt="Imagem Secundária">
+                <div class="highlight-category">Resumo</div>
+                <div class="highlight-title">
+                    <a target="_blank" href="https://olympics.com/pt/paris-2024/videos/resumo-dos-jogos-jogos-olimpicos-paris-2024">Resumo dos Jogos | Jogos Olímpicos Paris 2024</a>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <img src="https://media-manager.noticiasaominuto.com/960/naom_6770163da932e.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoxNTM3LCJjcm9wSGVpZ2h0Ijo4NjQsImNyb3BYIjowLCJjcm9wWSI6NzAzfX0=" alt="Imagem Secundária">
+                <div class="highlight-category">Interessante</div>
+                <div class="highlight-title">
+                    <a target="_blank" href="https://www.noticiasaominuto.com/desporto/2697711/paris2024-foi-ha-quatro-meses-e-ja-ha-medalhas-neste-deploravel-estado">Paris 2024 foi há quatro meses e já há medalhas neste estado</a>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <img src="https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w2440/f_auto/primary/rmfzribgkwsto2nfo261" alt="Imagem Secundária">
+                <div class="highlight-category">História</div>
+                <div class="highlight-title">
+                    <a target="_blank" href="https://olympics.com/pt/noticias/magia-vila-olimpica-jogos-olimpicos-paris-2024">A magia da Vila Olímpica de Paris 2024</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer >
+        <p style="margin: 0;">
+            Trabalho realizado por Gil Guedes (125031) e João Marques (125713)
+        </p>
+        <p style="margin: 0; text-align: right;">
+            Contacte-nos | gilernesto@ua.pt | joao.d.marques@ua.pt
+        </p>
+    </footer>
+
+    <!-- KO -->
+    <script src="https://knockoutjs.com/downloads/knockout-3.5.1.js"></script>
+
+    <script src="Universal/Logo.js"></script>
+    <script src="Universal/Darkmode.js"></script>
+    <!-- Link para o JavaScript do Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>

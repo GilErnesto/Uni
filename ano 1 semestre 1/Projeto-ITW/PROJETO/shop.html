@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <!-- Link Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Link para o CSS do Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Links para página css e js -->
+    <link rel="stylesheet" type="text/css" href="shop.css" />
+    <link rel="stylesheet" type="text/css" href="Universal/Navbar.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light border-bottom-0">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+
+                <!-- Botão do Hamburger -->
+                <button id="tooglebutton" class="navbar-toggler" onclick="ativar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Logo no Centro -->
+                <a class="navbar-brand mx-auto position-absolute" href="index.html">
+                    <img src="imagens/simbolo-olimpiadas-removebg-preview.png" type="logo" id="logo" alt="logo" />
+                </a>
+
+                <!-- Menu colapsável -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                    <ul class="navbar-nav w-100 d-flex justify-content-between">
+                        <!-- esquerda -->
+                        <li class="nav-item rounded-button">
+                            <a class="nav-link icone-anel" href="modalidades.html"><i class="fa-regular fa-circle"></i> Modalidades</a>
+                        </li>
+                        <li class="nav-item dropdown rounded-button">
+                            <a class="dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ship"></i> Geral</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="noc.html"><i class="fa-solid fa-flag"></i> Comitivas</a></li>
+                                <li><a class="dropdown-item" href="atletas.html"><i class="fa-solid fa-user"></i> Atletas</a></li>
+                                <li><a class="dropdown-item" href="treinadores.html"><i class="fa-solid fa-user-tie"></i> Treinadores</a></li>
+                                <li><a class="dropdown-item" href="tof.html"><i class="fa-solid fa-robot"></i> Árbitros</a></li>
+                                <li><a class="dropdown-item" href="estadios.html"><i class="fa-solid fa-map-location-dot"></i> Estádios | Espaços</a></li>
+                                <li><a class="dropdown-item" href="competicao.html"><i class="fa-regular fa-flag"></i> Competições</a></li>                                
+                                <li><a class="dropdown-item" href="equipas.html"><i class="fa-solid fa-people-group"></i> Equipas</a></li>
+
+                            </ul>
+                        </li>
+                        <!-- direita -->
+                            <li class="nav-item dropdown rounded-button">
+                            <a class="dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown"><i class="fa-solid fa-bars"></i></i> Outros</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tocha.html"><i class="fa-solid fa-fire"></i> Tocha Olímpica</a></li>
+                                <li><a class="dropdown-item" href="medals.html"><i class="fa-solid fa-medal"></i> Medalhas</a></li>
+                                <li><a class="dropdown-item" href="shop.html"><i class="fa-solid fa-basket-shopping"></i> Loja</a></li>
+                                <li><a class="dropdown-item" href="basketball.html"><i class="fa-solid fa-basketball"></i> Basketball Detalhes</a></li>
+                                <li><a class="dropdown-item" href="favoritos.html"><i class="fa-solid fa-heart"></i></i> Favoritos</a></li>
+                            </ul>
+                        </li>
+
+                <!-- Switch Dark mode -->
+                <ul class="navbar-nav switch-container rounded-button" id="bd-theme">
+                    <li class="nav-item">
+                        <div class="nav-link" type="button" data-bs-theme-value="light" aria-pressed="false">
+                            <i class="theme-icon fa fa-sun" title="Modo claro"></i>
+                        </div>
+                    </li>
+                    <li class="navbar-text hstack"><div class="vr"></div></li>
+                    <li class="nav-item">
+                        <div class="nav-link" type="button" data-bs-theme-value="dark" aria-pressed="false">
+                            <i class="theme-icon fa fa-moon" title="Modo escuro"></i>
+                        </div>
+                    </li>
+                </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <header id="titulo">
+        <h1>From Paris to LA</h1>
+        <img src="imagens/image-removebg-preview.png" alt="LA 2028">
+    </header>
+
+    <section id="countdown">
+        <div id="timer">
+            <div class="text"><span id="years">0 </span><span> years</span></div>
+            <div class="text"><span id="months">0 </span><span> months</span></div>
+            <div class="text"><span id="days">0 </span><span> days</span></div>
+            <div class="text"><span id="hours">0 </span><span> hours</span></div>
+            <div class="text"><span id="minutes">0 </span><span> minutes</span></div>
+            <div class="text"><span id="seconds">0 </span><span> seconds</span></div>
+        </div>
+    </section>
+
+    <section id="articles">
+        <h2>Compra Antecipadamente</h2>
+        <div id="cart" onclick="redirectToCart()">
+            <i class="fa fa-shopping-cart"></i> <span id="cart-count">0</span> itens
+            <div id="cart-items" class="cart-items"></div>
+        </div>
+        <div class="article">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/2028_Summer_Olympics_Logo.svg" alt="2028 Summer Olympics Logo">
+            <h3>Bilhete para todos os jogos de LA 28</h3>
+            <button onclick="addToCart('Bilhete para todos os jogos de LA 28', 34035)">€34 035</button>
+        </div>
+        <div class="article">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/2028_Summer_Olympics_Logo.svg" alt="2028 Summer Olympics Logo">
+            <h3>Bilhete VIP para todos os jogos de LA 28</h3>
+            <button onclick="addToCart('Bilhete VIP para todos os jogos de LA 28', 153700)">€153 700</button>
+        </div>
+        <div class="article">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/2028_Summer_Olympics_Logo.svg" alt="2028 Summer Olympics Logo">
+            <h3>Bilhete para as finais de todos os jogos de LA 28</h3>
+            <button onclick="addToCart('Bilhete para as finais de todos os jogos de LA 28', 19800)">€19 800</button>
+        </div>
+        <div class="article">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/2028_Summer_Olympics_Logo.svg" alt="2028 Summer Olympics Logo">
+            <h3>Bilhete VIP para as finais de todos os jogos de LA 28</h3>
+            <button onclick="addToCart('Bilhete VIP para as finais de todos os jogos de LA 28', 88000)">€88 000</button>
+        </div>
+        <div class="article">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/2028_Summer_Olympics_Logo.svg" alt="2028 Summer Olympics Logo">
+            <h3>Bilhete para as preliminares de todos os jogos de LA 28</h3>
+            <button onclick="addToCart('Bilhete para as preliminares de todos os jogos de LA 28', 14235)">€14 235</button>
+        </div>
+        <div class="article">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/2028_Summer_Olympics_Logo.svg" alt="2028 Summer Olympics Logo">
+            <h3>Bilhete VIP para as preliminares de todos os jogos de LA 28</h3>
+            <button onclick="addToCart('Bilhete VIP para as preliminares de todos os jogos de LA 28', 65700)">€65 700</button>
+        </div>
+    </section>
+
+    <footer >
+        <p style="margin: 0;">
+            Trabalho realizado por Gil Guedes (125031) e João Marques (125713)
+        </p>
+        <p style="margin: 0; text-align: right;">
+            Contacte-nos | gilernesto@ua.pt | joao.d.marques@ua.pt
+        </p>
+    </footer>
+
+    <!-- KO -->
+    <script src="https://knockoutjs.com/downloads/knockout-3.5.1.js"></script>
+        <!-- Link para Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="Universal/Logo.js"></script>
+        <script src="Universal/Darkmode.js"></script>
+        <script type="text/javascript" src="shop.js"></script>
+        <!-- Link para o JavaScript do Bootstrap 5 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

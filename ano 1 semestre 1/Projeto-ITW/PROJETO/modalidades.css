@@ -1,0 +1,48 @@
+﻿.desporto {
+    font-size: 50px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    background-color: white;
+}
+
+    .desporto:hover {
+        background-color: #1c1c1c;
+        color: white;
+    }
+
+[data-bs-theme="dark"] .desporto {
+    color: white;
+    background-color: #1c1c1c;
+}
+
+    [data-bs-theme="dark"] .desporto:hover {
+        background-color: #afafaf;
+        color: black;
+    }
+
+.desporto img {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.desporto:hover img {
+    display: block;
+}
+
+.pict {
+    width: auto;
+    height: 150px;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+[data-bs-theme="dark"] a {
+    color: white;
+}

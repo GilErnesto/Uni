@@ -1,0 +1,16 @@
+﻿#card-footer {
+    color: black;
+}
+
+[data-bs-theme="dark"] #card-footer {
+    color: darkgrey;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+[data-bs-theme="dark"] a {
+    color: white;
+}

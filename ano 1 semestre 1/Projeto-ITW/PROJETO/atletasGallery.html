@@ -1,0 +1,174 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lista de Atletas Galeria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <!-- Link Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Link para o CSS do Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Links para página css e js -->
+    <link rel="stylesheet" type="text/css" href="atletasGallery.css" />
+    <link rel="stylesheet" type="text/css" href="Universal/Navbar.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light border-bottom-0">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+
+                <!-- Botão do Hamburger -->
+                <button id="tooglebutton" class="navbar-toggler" onclick="ativar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Logo no Centro -->
+                <a class="navbar-brand mx-auto position-absolute" href="index.html">
+                    <img src="imagens/simbolo-olimpiadas-removebg-preview.png" type="logo" id="logo" alt="logo" />
+                </a>
+
+                <!-- Menu colapsável -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                    <ul class="navbar-nav w-100 d-flex justify-content-between">
+                        <!-- esquerda -->
+                        <li class="nav-item rounded-button">
+                            <a class="nav-link icone-anel" href="modalidades.html"><i class="fa-regular fa-circle"></i> Modalidades</a>
+                        </li>
+                        <li class="nav-item dropdown rounded-button">
+                            <a class="dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ship"></i> Geral</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="noc.html"><i class="fa-solid fa-flag"></i> Comitivas</a></li>
+                                <li><a class="dropdown-item" href="atletas.html"><i class="fa-solid fa-user"></i> Atletas</a></li>
+                                <li><a class="dropdown-item" href="treinadores.html"><i class="fa-solid fa-user-tie"></i> Treinadores</a></li>
+                                <li><a class="dropdown-item" href="tof.html"><i class="fa-solid fa-robot"></i> Árbitros</a></li>
+                                <li><a class="dropdown-item" href="estadios.html"><i class="fa-solid fa-map-location-dot"></i> Estádios | Espaços</a></li>
+                                <li><a class="dropdown-item" href="competicao.html"><i class="fa-regular fa-flag"></i> Competições</a></li>                                
+                                <li><a class="dropdown-item" href="equipas.html"><i class="fa-solid fa-people-group"></i> Equipas</a></li>
+
+                            </ul>
+                        </li>
+                        <!-- direita -->
+                            <li class="nav-item dropdown rounded-button">
+                            <a class="dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown"><i class="fa-solid fa-bars"></i></i> Outros</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tocha.html"><i class="fa-solid fa-fire"></i> Tocha Olímpica</a></li>
+                                <li><a class="dropdown-item" href="medals.html"><i class="fa-solid fa-medal"></i> Medalhas</a></li>
+                                <li><a class="dropdown-item" href="shop.html"><i class="fa-solid fa-basket-shopping"></i> Loja</a></li>
+                                <li><a class="dropdown-item" href="basketball.html"><i class="fa-solid fa-basketball"></i> Basketball Detalhes</a></li>
+                                <li><a class="dropdown-item" href="favoritos.html"><i class="fa-solid fa-heart"></i></i> Favoritos</a></li>
+                            </ul>
+                        </li>
+
+                <!-- Switch Dark mode -->
+                <ul class="navbar-nav switch-container rounded-button" id="bd-theme">
+                    <li class="nav-item">
+                        <div class="nav-link" type="button" data-bs-theme-value="light" aria-pressed="false">
+                            <i class="theme-icon fa fa-sun" title="Modo claro"></i>
+                        </div>
+                    </li>
+                    <li class="navbar-text hstack"><div class="vr"></div></li>
+                    <li class="nav-item">
+                        <div class="nav-link" type="button" data-bs-theme-value="dark" aria-pressed="false">
+                            <i class="theme-icon fa fa-moon" title="Modo escuro"></i>
+                        </div>
+                    </li>
+                </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container ">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <i class="fa-solid fa-user fa-2x me-2"></i>
+                    <h2 class="mb-0" data-bind="text:displayName"></h2>
+                </div>
+                <div class="topnav d-flex align-items-center">
+                    <label for="procura"></label>
+                    <input id="procura" type="text" placeholder="Procurar Atleta">
+                    <button id="searchButton" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    <button id="clearButton" class="btn btn-primary"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+
+            <!-- Pagination -->
+            <div class="row small">
+                <p class="col-1 mr-auto pt-2">
+                    <a class="btn mv" href="atletas.html" title="Mudar de Visão"><i class="fa-solid fa-table"></i></a>
+                </p>
+                <p class=" col-3 mr-auto pt-2">
+                    <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
+                    <span data-bind="html: 'Athletes: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
+                </p>
+                <div class="col-8 my-0 pt-3">
+                <ul class="pagination float-end">
+                    <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
+                    <li class="page-item"><a class="page-link" title="First Page" data-bind="click: fetchAthletes.bind($data, 1)">⇤</a></li>
+                    <li class="page-item"><a class="page-link" title="Previous Page" data-bind="click: prevPage">←</a></li>
+                    <!-- /ko -->
+                    <!-- ko foreach: pageArray -->
+                    <li class="page-item" data-bind="css: { active: $data === $parent.currentPage() }">
+                        <a class="page-link" href="#" data-bind="text: $data, click: $parent.fetchAthletes.bind($parent, $data)"></a>
+                    </li>
+                    <!-- /ko -->
+                    <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
+                    <li class="page-item"><a class="page-link" title="Next Page" data-bind="click: nextPage">→</a></li>
+                    <li class="page-item"><a class="page-link" title="Last Page" data-bind="click: fetchAthletes.bind($data, totalPages())">⇥</a></li>
+                    <!-- /ko -->
+                </ul>
+            </div>
+            </div>
+
+            <!-- ko if: Athletes().length > 0 -->
+            <div class="row g-2 mt-3" data-bind="foreach: Athletes">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title text-truncate" data-bind="text: Name" title="Name"></h5>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <img class="img-fluid justify-content-center" data-bind="attr: { src: Photo, title: Name }" onerror="this.onerror=null; this.src='/PROJETO/imagens/PersonNotFound.png'">
+                                <p>País: <span data-bind="text: BirthCountry"></span></p>
+                                <p>Sexo: <span data-bind="text: Sex"></span></p>
+                            </div>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a data-bind="attr: { href: 'atleta.html?id=' + Id }" class="btn btn-default btn-xs" title="Ver detalhes">
+                                <i class="fa fa-eye"></i> Ver Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </main>
+
+    <footer >
+        <p style="margin: 0;">
+            Trabalho realizado por Gil Guedes (125031) e João Marques (125713)
+        </p>
+        <p style="margin: 0; text-align: right;">
+            Contacte-nos | gilernesto@ua.pt | joao.d.marques@ua.pt
+        </p>
+    </footer>
+
+    <!-- KO -->
+    <script src="https://knockoutjs.com/downloads/knockout-3.5.1.js"></script>
+    <!-- Link para Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="Universal/Logo.js"></script>
+    <script src="Universal/Darkmode.js"></script>
+    <script type="text/javascript" src="atletasGallery.js"></script>
+    <!-- Link para o JavaScript do Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

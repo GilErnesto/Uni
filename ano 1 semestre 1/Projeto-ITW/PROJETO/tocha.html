@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Tocha Olímpica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <!-- Link Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Link para o CSS do Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Links para página css e js -->
+    <link rel="stylesheet" type="text/css" href="tocha.css" />
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light border-bottom-0">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+
+                <!-- Botão do Hamburger -->
+                <button id="tooglebutton" class="navbar-toggler" onclick="ativar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Logo no Centro -->
+                <a class="navbar-brand mx-auto position-absolute" href="index.html">
+                    <img src="imagens/simbolo-olimpiadas-removebg-preview.png" type="logo" id="logo" alt="logo" />
+                </a>
+
+                <!-- Menu colapsável -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                    <ul class="navbar-nav w-100 d-flex justify-content-between">
+                        <!-- esquerda -->
+                        <li class="nav-item rounded-button">
+                            <a class="nav-link icone-anel" href="modalidades.html"><i class="fa-regular fa-circle"></i> Modalidades</a>
+                        </li>
+                        <li class="nav-item dropdown rounded-button">
+                            <a class="dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ship"></i> Geral</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="noc.html"><i class="fa-solid fa-flag"></i> Comitivas</a></li>
+                                <li><a class="dropdown-item" href="atletas.html"><i class="fa-solid fa-user"></i> Atletas</a></li>
+                                <li><a class="dropdown-item" href="treinadores.html"><i class="fa-solid fa-user-tie"></i> Treinadores</a></li>
+                                <li><a class="dropdown-item" href="tof.html"><i class="fa-solid fa-robot"></i> Árbitros</a></li>
+                                <li><a class="dropdown-item" href="estadios.html"><i class="fa-solid fa-map-location-dot"></i> Estádios | Espaços</a></li>
+                                <li><a class="dropdown-item" href="competicao.html"><i class="fa-regular fa-flag"></i> Competições</a></li>                                
+                                <li><a class="dropdown-item" href="equipas.html"><i class="fa-solid fa-people-group"></i> Equipas</a></li>
+                                <li><a class="dropdown-item" href=".html"><i class="fa-solid fa-user-tie"></i> Treinadores</a></li>
+                            </ul>
+                        </li>
+                        <!-- direita -->
+                            <li class="nav-item dropdown rounded-button">
+                            <a class="dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown"><i class="fa-solid fa-bars"></i></i> Outros</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tocha.html"><i class="fa-solid fa-fire"></i> Tocha Olímpica</a></li>
+                                <li><a class="dropdown-item" href="medals.html"><i class="fa-solid fa-medal"></i> Medalhas</a></li>
+                                <li><a class="dropdown-item" href="shop.html"><i class="fa-solid fa-basket-shopping"></i> Loja</a></li>
+                                <li><a class="dropdown-item" href="basketball.html"><i class="fa-solid fa-basketball"></i> Basketball Detalhes</a></li>
+                                <li><a class="dropdown-item" href="favoritos.html"><i class="fa-solid fa-heart"></i></i> Favoritos</a></li>
+                            </ul>
+                        </li>
+
+                <!-- Switch Dark mode -->
+                <ul class="navbar-nav switch-container rounded-button" id="bd-theme">
+                    <li class="nav-item">
+                        <div class="nav-link" type="button" data-bs-theme-value="light" aria-pressed="false">
+                            <i class="theme-icon fa fa-sun" title="Modo claro"></i>
+                        </div>
+                    </li>
+                    <li class="navbar-text hstack"><div class="vr"></div></li>
+                    <li class="nav-item">
+                        <div class="nav-link" type="button" data-bs-theme-value="dark" aria-pressed="false">
+                            <i class="theme-icon fa fa-moon" title="Modo escuro"></i>
+                        </div>
+                    </li>
+                </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <h1><i class="fa fa-fire"></i>Caminho da Tocha Olímpica</h1>
+    <img id="mapaFran" src="imagens/tocha_route (2).jpg" usemap="#meumapa" />
+    <map name="meumapa">
+        <area target="_blank" alt="Marseille" title="Marseille" href="https://pt.wikipedia.org/wiki/Marselha" coords="787,565,808,587" shape="rect">
+        <area target="_blank" alt="Toulon" title="Toulon" href="https://pt.wikipedia.org/wiki/Toulon" coords="830,574,843,586" shape="rect">
+        <area target="_blank" alt="Manosque" title="Manosque" href="https://pt.wikipedia.org/wiki/Manosque" coords="805,524,818,536" shape="rect">
+        <area target="_blank" alt="Arles" title="Arles" href="https://pt.wikipedia.org/wiki/Arles" coords="754,538,765,547" shape="rect">
+        <area target="_blank" alt="Montpellier" title="Montpellier" href="https://pt.wikipedia.org/wiki/Montpellier" coords="697,545,713,557" shape="rect">
+        <area target="_blank" alt="Bastia" title="Bastia" href="https://pt.wikipedia.org/wiki/Bastia" coords="936,559,950,570" shape="rect">
+        <area target="_blank" alt="Perpinhão" title="Perpinhão" href="https://pt.wikipedia.org/wiki/Perpinh%C3%A3o" coords="653,607,671,623" shape="rect">
+        <area target="_blank" alt="Carcassonne" title="Carcassonne" href="https://pt.wikipedia.org/wiki/Carcassona" coords="625,571,642,584" shape="rect">
+        <area target="_blank" alt="Toulouse" title="Toulouse" href="https://pt.wikipedia.org/wiki/Toulouse" coords="579,550,591,561" shape="rect">
+        <area target="_blank" alt="Auch" title="Auch" href="https://pt.wikipedia.org/wiki/Auch" coords="538,536,552,550" shape="rect">
+        <area target="_blank" alt="Tarbes" title="Tarbes" href="https://pt.wikipedia.org/wiki/Tarbes" coords="512,571,524,582" shape="rect">
+        <area target="_blank" alt="Pau" title="Pau" href="https://pt.wikipedia.org/wiki/Pau_(Piren%C3%A9us_Atl%C3%A2nticos)" coords="488,555,503,570" shape="rect">
+        <area target="_blank" alt="Périgueux" title="Périgueux" href="https://fr.wikipedia.org/wiki/P%C3%A9rigueux" coords="542,437,556,449" shape="rect">
+        <area target="_blank" alt="Bordeaux" title="Bordeaux" href="https://pt.wikipedia.org/wiki/Bord%C3%A9us" coords="488,455,508,467" shape="rect">
+        <area target="_blank" alt="Angoulême" title="Angoulême" href="https://pt.wikipedia.org/wiki/Angolema" coords="526,393,538,407" shape="rect">
+        <area target="_blank" alt="Grand Poitiers Futuroscope" title="Grand Poitiers Futuroscope" href="https://pt.wikipedia.org/wiki/Futuroscope" coords="559,352,544,338" shape="rect">
+        <area target="_blank" alt="Châteauroux" title="Châteauroux" href="https://pt.wikipedia.org/wiki/Ch%C3%A2teauroux" coords="597,319,611,333" shape="rect">
+        <area target="_blank" alt="Angers" title="Angers" href="https://pt.wikipedia.org/wiki/Angers" coords="510,282,498,270" shape="rect">
+        <area target="_blank" alt="Laval" title="Laval" href="https://pt.wikipedia.org/wiki/Laval_(Mayenne)" coords="503,237,486,225" shape="rect">
+        <area target="_blank" alt="Caen" title="Caen" href="https://pt.wikipedia.org/wiki/Caen" coords="520,164,503,152" shape="rect">
+        <area target="_blank" alt="Le Mont-Saint-Michel" title="Le Mont-Saint-Michel" href="https://pt.wikipedia.org/wiki/Monte_Saint-Michel" coords="469,192,454,180" shape="rect">
+        <area target="_blank" alt="Rennes" title="Rennes" href="https://pt.wikipedia.org/wiki/Rennes" coords="458,233,439,218" shape="rect">
+        <area target="_blank" alt="Niort" title="Niort" href="https://pt.wikipedia.org/wiki/Niort" coords="516,361,502,345" shape="rect">
+        <area target="_blank" alt="Les Sables-d'Olonne" title="Les Sables-d'Olonne" href="https://fr.wikipedia.org/wiki/Les_Sables-d%27Olonne" coords="441,333,425,317" shape="rect">
+        <area target="_blank" alt="La Baule-Escoublac" title="La Baule-Escoublac" href="https://pt.wikipedia.org/wiki/La_Baule-Escoublac" coords="415,288,401,275" shape="rect">
+        <area target="_blank" alt="Vannes" title="Vannes" href="https://pt.wikipedia.org/wiki/Vannes" coords="401,257,385,244" shape="rect">
+        <area target="_blank" alt="Brest" title="Brest" href="https://pt.wikipedia.org/wiki/Brest_(Fran%C3%A7a)" coords="328,208,311,191" shape="rect">
+        <area target="_blank" alt="Cayenne" title="Cayenne" href="https://pt.wikipedia.org/wiki/Caiena" coords="85,458,69,444" shape="rect">
+        <area target="_blank" alt="Nouméa" title="Nouméa" href="https://pt.wikipedia.org/wiki/Nume%C3%A1" coords="" shape="rect">
+        <area target="_blank" alt="Saint-Denis" title="Saint-Denis" href="https://pt.wikipedia.org/wiki/Saint-Denis_(Seine-Saint-Denis)" coords="166,452,152,439" shape="rect">
+        <area target="_blank" alt="Pira'e-Pape'ete" title="Pira'e-Pape'ete" href="" coords="257,445,241,434" shape="rect">
+        <area target="_blank" alt="Baie-Mahault" title="Baie-Mahault" href="https://pt.wikipedia.org/wiki/Baie-Mahault" coords="120,569,139,587" shape="rect">
+        <area target="_blank" alt="Fort-de-France" title="Fort-de-France" href="https://pt.wikipedia.org/wiki/Forte_da_Fran%C3%A7a" coords="271,571,290,588" shape="rect">
+        <area target="_blank" alt="Nice" title="Nice" href="https://pt.wikipedia.org/wiki/Nice" coords="891,548,877,536" shape="rect">
+        <area target="_blank" alt="Avignon" title="Avignon" href="https://pt.wikipedia.org/wiki/Avinh%C3%A3o" coords="777,528,760,515" shape="rect">
+        <area target="_blank" alt="Valence" title="Valence" href="https://pt.wikipedia.org/wiki/Valence_(Dr%C3%B4me)" coords="771,463,759,452" shape="rect">
+        <area target="_blank" alt="Vichy" title="Vichy" href="https://en.wikipedia.org/wiki/Vichy_France" coords="672,347,687,363" shape="rect">
+        <area target="_blank" alt="Saint-Etienne" title="Saint-Etienne" href="https://pt.wikipedia.org/wiki/Saint-%C3%89tienne" coords="745,423,731,410" shape="rect">
+        <area target="_blank" alt="Chamonix-Mont-Blanc" title="Chamonix-Mont-Blanc" href="https://pt.wikipedia.org/wiki/Chamonix-Mont-Blanc" coords="844,371,861,384" shape="rect">
+        <area target="_blank" alt="Besançon" title="Besançon" href="https://pt.wikipedia.org/wiki/Besan%C3%A7on" coords="809,288,828,304" shape="rect">
+        <area target="_blank" alt="Strasbourg" title="Strasbourg" href="https://pt.wikipedia.org/wiki/Estrasburgo" coords="894,200,877,183" shape="rect">
+        <area target="_blank" alt="Metz" title="Metz" href="https://pt.wikipedia.org/wiki/Metz" coords="832,163,819,150" shape="rect">
+        <area target="_blank" alt="Saint-Dizier" title="Saint-Dizier" href="https://pt.wikipedia.org/wiki/Saint-Dizier" coords="769,208,755,194" shape="rect">
+        <area target="_blank" alt="Verdun" title="Verdun" href="https://pt.wikipedia.org/wiki/Verdun" coords="788,166,774,152" shape="rect">
+        <area target="_blank" alt="Reims" title="Reims" href="https://pt.wikipedia.org/wiki/Reims" coords="729,161,714,148" shape="rect">
+        <area target="_blank" alt="Lille" title="Lille" href="https://pt.wikipedia.org/wiki/Lille" coords="682,66,665,52" shape="rect">
+        <area target="_blank" alt="Lens-Liévin" title="Lens-Liévin" href="https://fr.wikipedia.org/wiki/Communaut%C3%A9_d%27agglom%C3%A9ration_de_Lens-Li%C3%A9vin" coords="642,68,658,78" shape="rect">
+        <area target="_blank" alt="Amiens" title="Amiens" href="https://pt.wikipedia.org/wiki/Amiens" coords="649,115,630,101" shape="rect">
+        <area target="_blank" alt="Le Havre" title="Le Havre" href="https://pt.wikipedia.org/wiki/Le_Havre" coords="528,127,545,144" shape="rect">
+        <area target="_blank" alt="Vernon" title="Vernon" href="https://pt.wikipedia.org/wiki/Vernon_(Eure)" coords="601,166,583,152" shape="rect">
+        <area target="_blank" alt="Chartres" title="Chartres" href="https://pt.wikipedia.org/wiki/Chartres" coords="587,200,606,215" shape="rect">
+        <area target="_blank" alt="Blois" title="Blois" href="https://pt.wikipedia.org/wiki/Blois" coords="603,280,583,265" shape="rect">
+        <area target="_blank" alt="Orléans" title="Orléans" href="https://pt.wikipedia.org/wiki/Orle%C3%A3es" coords="611,237,627,252" shape="rect">
+        <area target="_blank" alt="Auxerre" title="Auxerre" href="https://pt.wikipedia.org/wiki/Auxerre" coords="693,252,710,266" shape="rect">
+        <area target="_blank" alt="Dijon" title="Dijon" href="https://pt.wikipedia.org/wiki/Dijon" coords="753,277,769,291" shape="rect">
+        <area target="_blank" alt="Troyes" title="Troyes" href="https://pt.wikipedia.org/wiki/Troyes" coords="710,211,728,226" shape="rect">
+        <area target="_blank" alt="Saint-Quentin" title="Saint-Quentin" href="https://pt.wikipedia.org/wiki/Saint-Quentin" coords="680,105,697,117" shape="rect">
+        <area target="_blank" alt="Beauvais" title="Beauvais" href="https://pt.wikipedia.org/wiki/Beauvais" coords="621,133,638,148" shape="rect">
+        <area target="_blank" alt="Soisy-sous-Montmorency" title="Soisy-sous-Montmorency" href="https://pt.wikipedia.org/wiki/Soisy-sous-Montmorency" coords="116,91,128,100" shape="rect">
+        <area target="_blank" alt="Meaux" title="Meaux" href="https://pt.wikipedia.org/wiki/Meaux" coords="175,102,187,114" shape="rect">
+        <area target="_blank" alt="Créteil" title="Créteil" href="https://pt.wikipedia.org/wiki/Cr%C3%A9teil" coords="144,135,134,127" shape="rect">
+        <area target="_blank" alt="Evry-Courcouronnes" title="Evry-Courcouronnes" href="https://fr.wikipedia.org/wiki/%C3%89vry-Courcouronnes" coords="123,147,131,157" shape="rect">
+        <area target="_blank" alt="Versailles" title="Versailles" href="https://pt.wikipedia.org/wiki/Versalhes" coords="90,121,104,131" shape="rect">
+        <area target="_blank" alt="Nanterre > L’Arche de la Défense" title="Nanterre > L’Arche de la Défense" href="" coords="104,107,117,117" shape="rect">
+        <area target="_blank" alt="Parc Georges-Valbon" title="Parc Georges-Valbon" href="https://fr.wikipedia.org/wiki/Parc_Georges-Valbon" coords="131,100,141,110" shape="rect">
+        <area name="Paris" target="_blank" alt="Paris" title="Paris" href="https://pt.wikipedia.org/wiki/Paris" coords="621,164,653,190" shape="rect">
+    </map>
+    <aside>
+        <div data-bind="foreach: records">
+            <div data-bind="visible: Stage_number !== 0">
+                <div class="card col">
+                    <div class="card-header">Cidade</div>
+                    <div class="card-body">
+                        <h5 data-bind="text: City">Cidade</h5>
+                    </div>
+                </div>
+                <div class="card col">
+                    <div class="card-header">Data de ínicio</div>
+                    <div class="card-body">
+                        <p data-bind="text: Date_start"></p>
+                    </div>
+                </div>
+                <div class="card col">
+                    <div class="card-header">Data de fim</div>
+                    <div class="card-body">
+                        <p data-bind="text: Date_end"></p>
+                    </div>
+                </div>
+                <div class="card col">
+                    <div class="card-header">Título do segmento</div>
+                    <div class="card-body">
+                        <p>
+                            <span data-bind="text: Title"> </span>
+                            <a data-bind="attr: { href: Url }">
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="card col">
+                    <div class="card-header">Número do segmento</div>
+                    <div class="card-body">
+                        <p data-bind="text: Stage_number"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <iframe class="col-12" id="infoFrame" src="" name="infoFrame" scrolling="yes"></iframe>
+
+    <footer >
+        <p style="margin: 0;">
+            Trabalho realizado por Gil Guedes (125031) e João Marques (125713)
+        </p>
+        <p style="margin: 0; text-align: right;">
+            Contacte-nos | gilernesto@ua.pt | joao.d.marques@ua.pt
+        </p>
+    </footer>
+
+    <!-- KO -->
+    <script src="https://knockoutjs.com/downloads/knockout-3.5.1.js"></script>
+    <!-- Link para Jquery e Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Universal/Logo.js"></script>
+    <script src="Universal/Darkmode.js"></script>
+    <script type="text/javascript" src="tocha.js"></script>
+    <script>
+        // Função para filtrar registros específicos da API para Marselha (segmento 1)
+        function filterZoneMarselha() {
+            if (!vmInstance) {
+                console.error('vmInstance não está definido!');
+                return;
+            }
+
+            // Filtra apenas o segmento 1 de Marselha
+            const filteredRecords = vmInstance.allRecords().filter(record =>
+                record.City === "Marselha" && record.Stage_number === 1
+            );
+
+            // Atualiza os registros filtrados
+            vmInstance.records(filteredRecords);
+
+            console.log('Registros filtrados para Marselha:', filteredRecords);
+        }
+
+        // Função genérica para filtrar os dados no ViewModel
+        function filterZone(zone) {
+            if (!vmInstance) {
+                console.error('vmInstance não está definido!');
+                return;
+            }
+
+            // Filtra os registros com base na zona
+            const filteredRecords = vmInstance.allRecords().filter(record => record.City === zone);
+
+            // Atualiza os registros filtrados
+            vmInstance.records(filteredRecords);
+
+            console.log('Registros filtrados:', filteredRecords);
+        }
+
+        // Quando o DOM estiver completamente carregado
+        document.addEventListener('DOMContentLoaded', function () {
+            // Seleciona todas as áreas do mapa
+            const areas = document.querySelectorAll('map[name="meumapa"] area');
+
+            // Seleciona o iframe
+            const iframe = document.getElementById('infoFrame');
+
+            // Adiciona um listener de clique para cada área
+            areas.forEach(area => {
+                area.addEventListener('click', function (event) {
+                    event.preventDefault(); // Evita o comportamento padrão do link
+
+                    const zone = area.getAttribute('alt'); // Nome da zona (ex.: Marselha)
+                    const url = area.getAttribute('href'); // Link do href
+
+                    console.log(`Zona clicada: ${zone}`);
+
+                    // Exceção para Marselha
+                    if (zone === "Marselha") {
+                        console.log("Exibindo segmento 1 para Marselha.");
+                        filterZoneMarselha();
+                    } else {
+                        console.log(`Abrindo ${url} no iframe.`);
+                        iframe.setAttribute('src', url); // Abre o link no iframe
+                        filterZone(zone); // Filtra os dados da API para a zona clicada
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Link para o JavaScript do Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

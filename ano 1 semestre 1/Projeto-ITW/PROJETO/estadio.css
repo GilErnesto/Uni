@@ -1,0 +1,36 @@
+﻿.bt-line {
+    margin-top: 10px;
+    border-bottom: 1.5px solid lightgrey
+}
+
+p {
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.pic {
+    width: auto;
+    height: 100px
+}
+
+#modalidades {
+    border: 1px solid black;
+}
+    [data-bs-theme="dark"] #modalidades{
+        color: white;
+        border: 1px solid lightgrey;
+    }
+
+h4 {
+    margin-top: 10px;
+    border-bottom: 1.5px solid lightgrey
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+[data-bs-theme="dark"] a {
+    color: white;
+}
