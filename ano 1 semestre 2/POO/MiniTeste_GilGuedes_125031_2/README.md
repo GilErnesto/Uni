@@ -1,0 +1,1 @@
+Este código foi copiado do repositório do Bernardo Coelho
