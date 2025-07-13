@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <title>Mapa de Centros de Adoção e Canis em Portugal</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <!-- Link Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Link para KnockoutJS -->
+    <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/knockout.js"></script>
+    <!-- Link para Jquery e Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link para o CSS do Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="topfoot.css" />
+    <style>
+        main {
+            margin: 60px 0px 75px 0px;
+            flex: 1; /* Ocupa o espaço restante entre header e footer */
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        #mapid {
+            flex: 1; /* Faz o mapa ocupar todo o espaço disponível em main */
+            width: 100%; /* Ocupa toda a largura do contêiner */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid d-flex align-items-center">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="mapid"></div>
+    </main>
+
+    <footer class="fixed-bottom container-fluid d-flex justify-content-around align-items-center bg-pink">
+        <a href="feed.html" class="text-decoration-none" aria-label="Ir para o feed">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <a href="map_ini.html" class="text-decoration-none" aria-label="Ir para o mapa">
+            <i class="fa-solid fa-map-location-dot" id="pag"></i>
+        </a>
+        <a href="Centros de adoção.html" class="text-decoration-none" aria-label="Ver animais disponíveis">
+            <i class="fa-solid fa-paw"></i>
+        </a>
+        <a href="UserPage.html" class="text-decoration-none" aria-label="Perfil do usuário">
+            <i class="fa-solid fa-user"></i>
+        </a>
+    </footer>
+
+    <script>
+        // Verificação para garantir que o mapa está sendo inicializado
+        console.log('Inicializando o mapa...');
+    
+        // Configurar o mapa
+        const map = L.map('mapid').setView([39.3999, -8.2245], 7);
+        console.log('Mapa inicializado:', map);
+    
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    
+        var waypoints = [
+            { lat: 38.736946, lng: -9.142685, popupContent: "APAA - Associação de Proteção aos Animais Abandonados" },
+            { lat: 41.157944, lng: -8.629105, popupContent: "Cantinho dos Animais Abandonados do Porto" },
+            { lat: 40.86286551588219, lng: - 8.42498022345767, popupContent: "Canil Intermunicipal da Associação de Municípios das Terras de Santa Maria (CIAMTSM)" },
+            { lat: 38.569, lng: -7.9097, popupContent: "Associação Cantinho dos Animais de Évora" },
+            { lat: 41.153126, lng: -8.557464, popupContent: "CROA - Centro de Recolha Oficial de Animais do Porto" },
+            { lat: 38.7071, lng: -9.13549, popupContent: "Associação Bianca" },
+            { lat: 41.14961, lng: -8.61099, popupContent: "Associação MIDAS" },
+            { lat: 38.71667, lng: -9.13917, popupContent: "Associação Patas Errantes" },
+        ];
+    
+        var markers = L.markerClusterGroup();
+    
+        // Adicionar waypoints fixos
+        waypoints.forEach(function (waypoint) {
+            var marker = L.marker([waypoint.lat, waypoint.lng])
+                .bindPopup(waypoint.popupContent);
+    
+            if (waypoint.url) {
+                marker.on('click', function () {
+                    window.location.href = waypoint.url;
+                });
+            }
+    
+            markers.addLayer(marker);
+        });
+
+        // Função para carregar pins do localStorage
+        function loadPins() {
+            const pins = JSON.parse(localStorage.getItem('pins')) || [];
+            return pins;
+        }
+            
+        // Carregar e exibir todos os pins armazenados
+        const pins = loadPins();
+        pins.forEach(pin => {
+            const marker = L.marker([pin.lat, pin.lng]).addTo(map)
+                .bindPopup(`${pin.user}`);
+            markers.addLayer(marker);
+        });
+
+        map.addLayer(markers);
+
+    </script>
+</body>
+</html>

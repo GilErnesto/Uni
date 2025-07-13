@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <title>Centros de Adoção em Portugal</title>
+    <!-- Link Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <!-- Link para KnockoutJS -->
+    <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/knockout.js"></script>
+    <!-- Link para Jquery e Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link para o CSS do Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="topfoot.css" />
+
+    <style>
+.search-container {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    justify-content: center;
+}
+
+.search-input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.card-container {
+    width: 100%; /* Ocupa toda a largura */
+    display: flex;
+    flex-direction: column; /* Colocar os elementos em coluna */
+    align-items: center; /* Centralizar horizontalmente */
+    margin-top: 10px; /* Espaçamento entre a pesquisa e os cards */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 90%; /* Tamanho responsivo do card */
+}
+
+
+
+        .card img {
+            width: auto;
+            height: 100px;    
+            margin-right: 15px;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 16px;
+            margin: 0 0 5px;
+            cursor: pointer; /* Adiciona cursor de ponteiro */
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .card-link {
+            display: block;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        .favorite-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .favorite-btn.favorited {
+            color: red;
+        }
+
+        @media (max-width: 768px) {
+        .search-input, .card {
+            width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid d-flex align-items-center">
+            </div>
+        </nav>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Pesquisar centros de adoção...">    
+        <div id="centros-container" class="card-container">
+        <!-- Os cards são adicionados dinamicamente aqui -->
+    </div>
+
+    <footer class="fixed-bottom container-fluid d-flex justify-content-around align-items-center bg-pink">
+        <a href="feed.html" class="text-decoration-none" aria-label="Ir para o feed">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <a href="map_ini.html" class="text-decoration-none" aria-label="Ir para o mapa">
+            <i class="fa-solid fa-map-location-dot"></i>
+        </a>
+        <a href="Centros de adoção.html" class="text-decoration-none" aria-label="Ver animais disponíveis">
+            <i class="fa-solid fa-paw" id="pag"></i>
+        </a>
+        <a href="UserPage.html" class="text-decoration-none" aria-label="Perfil do usuário">
+            <i class="fa-solid fa-user"></i>
+        </a>
+    </footer>
+
+    <script>
+        // Recuperar dados do localStorage
+        const data = JSON.parse(localStorage.getItem('users')) || [];
+
+        // Filtrar apenas os centros de abrigo
+        const centrosDeAbrigo = data.filter(user => user.userType === "Centro de Abrigo");
+
+        // Selecionar o elemento onde você quer exibir os dados
+        const container = document.getElementById('centros-container');
+
+        // Criar elementos HTML para cada centro de abrigo e adicionar ao container
+        centrosDeAbrigo.forEach(centro => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <img src="${centro.profileImage || 'default-image.png'}" alt="${centro.nome}">
+                <div class="card-content">
+                    <h2 class="card-title" onclick="redirectToFeed()">${centro.nome}</h2>
+                    <p class="card-description">Localização: ${centro.location || 'Desconhecida'}</p>
+                    <a href="${centro.link || 'siteexemplo.html'}" class="card-link">Saiba mais</a>
+                </div>
+                <button class="favorite-btn" onclick="toggleFavorite(this)">&#9829;</button>
+            `;
+            container.appendChild(card);
+        });
+
+        function redirectToFeed() {
+            window.location.href = 'FeedDeAnimais.html';
+        }
+
+        function toggleFavorite(button) {
+            button.classList.toggle('favorited');
+        }
+
+        // Função para filtrar os cards com base na pesquisa
+        function filterCards() {
+            var input = document.getElementById('search-input');
+            var filter = input.value.toLowerCase();
+            var cards = document.querySelectorAll('.card');
+
+            cards.forEach(function (card) {
+                var title = card.querySelector('.card-title').textContent.toLowerCase();
+                if (title.includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Adiciona o evento de input na barra de pesquisa
+        document.getElementById('search-input').addEventListener('input', filterCards);
+    </script>
+</body>
+</html>

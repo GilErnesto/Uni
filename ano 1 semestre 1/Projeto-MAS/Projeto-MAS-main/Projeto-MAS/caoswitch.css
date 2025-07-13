@@ -1,0 +1,127 @@
+    body {
+        background: #2e394d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .toggle-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .toggle {
+        position: relative;
+    }
+
+    label.toggle-item {
+        width: 7em;
+        background: #2e394d;
+        height: 3em;
+        display: inline-block;
+        border-radius: 50px;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        label.toggle-item:before {
+            content: '';
+            display: block;
+            width: 2.3em;
+            height: 2.3em;
+            position: absolute;
+            top: 0.35em;
+            left: 0.35em;
+            border-radius: 50%;
+            background: #88cf8f;
+            transition: all 0.3s ease;
+        }
+
+    .dog {
+        display: inline-block;
+        position: absolute;
+        width: 2.5em;
+        height: 2.5em;
+        top: 0.25em;
+        left: 0.2em;
+        transition: 0.6s ease;
+    }
+
+        .dog .eyes {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #222;
+            border-radius: 50%;
+            transform: translate(8px, 14px);
+            box-shadow: 16px 0 0 #222, 22px -4px 0 12px #e4ac04;
+        }
+
+        .dog .ear {
+            width: 18px;
+            height: 20px;
+            position: absolute;
+            left: -4px;
+            bottom: 80%;
+            background: #f9bb00;
+            margin-bottom: -5px;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            box-shadow: inset 4px 0 0 0px #ffffff, inset -4px 0 0 0px #ffffff;
+            transform: rotate(-40deg);
+        }
+
+            .dog .ear.right {
+                transform: rotate(60deg) scaleX(-1);
+                left: auto;
+                right: 0px;
+            }
+
+        .dog .face {
+            overflow: hidden;
+            border-radius: 50%;
+            width: 2.5em;
+            height: 2.5em;
+            position: absolute;
+            background: #fff;
+        }
+
+        .dog .mouth {
+            position: absolute;
+            background: #222;
+            width: 14px;
+            height: 7px;
+            left: 50%;
+            margin-left: -7px;
+            bottom: 8px;
+            border-radius: 2px 2px 20px 20px;
+            transform: scale(0);
+            transition: 0.1s ease;
+        }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+        input[type="checkbox"]:checked + label {
+            background: #4caf50;
+        }
+
+            input[type="checkbox"]:checked + label .dog {
+                left: 68px;
+                transform: rotate(360deg);
+            }
+
+                input[type="checkbox"]:checked + label .dog .mouth {
+                    transform: scale(1);
+                    transition-delay: 0.7s;
+                }
+
+                input[type="checkbox"]:checked + label .dog .ear.right {
+                    transform: scaleX(-1) rotate(-35deg);
+                    transition-delay: 0.6s;
+                }

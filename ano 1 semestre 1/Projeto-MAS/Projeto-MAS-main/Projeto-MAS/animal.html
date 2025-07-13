@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=390, initial-scale=1.0">
+    <title>Animal</title>
+    <!-- Link Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Link para KnockoutJS -->
+    <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/knockout.js"></script>
+    <!-- Link para Jquery e Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link para o CSS do Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="topfoot.css" />
+
+    <style>
+
+        .center-card {
+            border: none;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card {
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+            .testimonial-card img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+        .animal-card img {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .search-bar {
+            margin: 20px 0;
+        }
+
+        .carousel-inner {
+            width: 390px;
+            height: 290px;
+        }
+
+        .info-box {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+            .info-box button {
+                width: 100%;
+                padding: 10px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+                .info-box button:hover {
+                    background-color: #0056b3;
+                }
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid d-flex align-items-center">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mt-4">
+            <!-- Centros Perto de Ti -->
+            <div class="row">
+                <!-- Centro Perto de Ti à Esquerda -->
+                <div class="col-8 d-flex">
+                    <a href="map_ini.html" class="w-110">
+                        <div class="center-card text-center h-100 d-flex flex-column justify-content-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/%EB%8B%A5%EC%8A%A4%ED%9B%88%ED%8A%B8%28%EB%8B%A8%EB%AA%A8%EC%A2%85%29_%28Dachshund_%28Short%29%29.jpg" alt="Mapa" class="img-fluid mb-2">
+                        </div>
+                    </a>
+                </div>
+
+                <!--  à Direita -->
+                <div class="col-4">
+                    <div class="d-flex flex-column gap-3 h-90">
+                        <div class="testimonial-card d-flex align-items-center" style="margin-top:20px;">
+                            <div class="me-2">
+                                <h5 class="mb-0">Animal:</h5>
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <strong>Cão</strong><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <button onclick="window.location.href='VisitaForm.html'">Visitar Formulário</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- info de Animais -->
+        <div class="alert">
+            <h3>Informação</h3>
+            <ul>
+                <li>Nome: Caramelinho</li>
+                <li>Idade: 2 anos</li>
+                <li>Porte: Pequeno</li>
+                <li>Pelagem: Marrom</li>
+                <li>Centro de adoção: Belos Cães</li>
+                <li>Peso: 20kg</li>
+                <li>Vacinas: <i style="font-size:15px !important" class="fa-solid fa-file-arrow-down"></i></li>
+            </ul>
+        </div>
+
+        <!-- fotos animal -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJEratIBGBkGL_Ng9mv4q79hoh6264muxVgg&s" alt="Los Angeles" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.iol.pt/image/id/11498565/1024.jpg" alt="Chicago" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3495068:1711737971/C-o-salsicha.jpg?f=default&$p$f=c950bfb" alt="New York" class="d-block w-100">
+                </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </main>
+
+    <footer class="fixed-bottom container-fluid d-flex justify-content-around align-items-center bg-pink fixed-bottom">
+        <a href="feed.html" class="text-decoration-none" aria-label="Ir para o feed">
+            <i class="fa-solid fa-house" id="pag"></i>
+        </a>
+        <a href="map_ini.html" class="text-decoration-none" aria-label="Ir para o mapa">
+            <i class="fa-solid fa-map-location-dot"></i>
+        </a>
+        <a href="Centros de adoção.html" class="text-decoration-none" aria-label="Ver animais disponíveis">
+            <i class="fa-solid fa-paw"></i>
+        </a>
+        <a href="UserPage.html" class="text-decoration-none" aria-label="Perfil do usuário">
+            <i class="fa-solid fa-user"></i>
+        </a>
+    </footer>
+
+    <!-- Link para o JavaScript do Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

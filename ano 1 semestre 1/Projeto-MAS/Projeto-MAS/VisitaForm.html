@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Reserva de Horário</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Link Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- Link para KnockoutJS -->
+  <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/knockout.js"></script>
+  <!-- Link para Jquery e Ajax -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Link para o CSS do Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="topfoot.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid d-flex align-items-center">
+        </div>
+    </nav>
+  </header>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Reserva de Horário para Visita</h1>
+    <form action="/submit-reservation" method="POST">
+      <!-- Nome -->
+      <div class="mb-3">
+        <label for="visitorName" class="form-label">Nome Completo</label>
+        <input type="text" name="visitorName" id="visitorName" class="form-control" placeholder="Digite seu nome completo" required>
+      </div>
+
+      <!-- E-mail -->
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Digite seu e-mail" required>
+      </div>
+
+      <!-- Telefone -->
+      <div class="mb-3">
+        <label for="phone" class="form-label">Telefone</label>
+        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Digite seu telefone (ex: (11) 98765-4321)" required>
+      </div>
+
+      <!-- Data da visita -->
+      <div class="mb-3">
+        <label for="visitDate" class="form-label">Data da Visita</label>
+        <input type="date" name="visitDate" id="visitDate" class="form-control" required>
+      </div>
+
+      <!-- Horário da visita -->
+      <div class="mb-3">
+        <label for="visitTime" class="form-label">Horário da Visita</label>
+        <select name="visitTime" id="visitTime" class="form-select" required>
+          <option value="" disabled selected>Selecione o horário</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+        </select>
+      </div>
+
+      <!-- Comentários ou observações -->
+      <div class="mb-3">
+        <label for="comments" class="form-label">Comentários ou Observações</label>
+        <textarea name="comments" id="comments" class="form-control" rows="4" placeholder="Insira informações adicionais, se necessário"></textarea>
+      </div>
+
+      <!-- Botão de envio -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-lg" style="background-color: plum;  color: white;">Reservar</button>
+      </div>
+    </form>
+  </div>
+
+  <footer class="fixed-bottom container-fluid d-flex justify-content-around align-items-center bg-pink fixed-bottom">
+    <a href="feed.html" class="text-decoration-none" aria-label="Ir para o feed">
+        <i class="fa-solid fa-house" id="pag"></i>
+    </a>
+    <a href="map_ini.html" class="text-decoration-none" aria-label="Ir para o mapa">
+        <i class="fa-solid fa-map-location-dot" ></i>
+    </a>
+    <a href="Centros de adoção.html" class="text-decoration-none" aria-label="Ver animais disponíveis">
+        <i class="fa-solid fa-paw"></i>
+    </a>
+    <a href="UserPage.html" class="text-decoration-none" aria-label="Perfil do usuário">
+        <i class="fa-solid fa-user"></i>
+    </a>
+</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=390, initial-scale=1.0">
+    <title>Adim Page</title>
+    <!-- Link Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Link para KnockoutJS -->
+    <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/knockout.js"></script>
+    <!-- Link para Jquery e Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link para o CSS do Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="topfootUser.css" />
+
+    <style>
+        .center-card img {
+            border: none;
+            border-radius: 50%;
+        }
+
+        .animal-card img {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        hr {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid d-flex align-items-center">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- top -->
+        <div class="center-card col-4 d-flex">
+            <a href="map_ini.html" class="w-100">
+                <div class="d-flex flex-column justify-content-center">
+                    <img src="" class="img-fluid mb-2" id="fotoPerfil">
+                </div>
+            </a>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="align-itens-center">
+                    <h5 class="mb-0" id="userName"></h5>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="align-itens-center">
+                    <div class="align-items-center">
+                        <a href="admin.html" class="text-decoration-none" aria-label="Ver favoritos">
+                            <h5 class="fa-solid fa-paw" aria-hidden="true" style="max-width: 20px; max-height: 20px;"></h5> Adicionar Animal
+                        </a>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer class="fixed-bottom container-fluid d-flex justify-content-around align-items-center bg-pink">
+        <a href="" class="text-decoration-none" aria-label="Ir para o feed">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <a href="cmapaAdmin.html" class="text-decoration-none" aria-label="Ir para o mapa">
+            <i class="fa-solid fa-map-location-dot"></i>
+        </a>
+        <a href="avaliacaoAdim.html" class="text-decoration-none" aria-label="Ver animais disponíveis">
+            <i class="fa-solid fa-star"></i>
+        </a>
+        <a href="AdminPage.html" class="text-decoration-none" aria-label="Perfil do usuário">
+            <i class="fa-solid fa-user" id="pag"></i>
+        </a>
+    </footer>
+
+    <!-- Link para o JavaScript do Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    if (currentUser) {
+        document.getElementById('userName').textContent = currentUser.nome;
+        const fotoPerfil = document.getElementById('fotoPerfil');
+        if (currentUser.profileImage) {
+            fotoPerfil.src = currentUser.profileImage;
+        } else {
+            fotoPerfil.alt = 'Foto não disponível';
+        }
+    } else {
+        alert('Nenhum usuário logado.');
+        window.location.href = 'login.html'; // Redireciona para o login
+    }
+});
+
+    </script>
+
+</body>
+</html>
