@@ -1,0 +1,22 @@
+4-	11		int
+	5.67 		float
+	5.67		float
+	5.0		float
+	2.0		float
+	6.67		float
+	6.0		float
+	'taurus'	string
+	erro		nao se pode adicionar um numero a uma string
+	'tautau'	string
+
+5- 
+largura = 10.0
+altura  = 5.0
+area = largura * altura
+perímetro = largura *2 + altura*2
+
+print(area)
+print(perímetro)
+input()
+
+7- Erro na linha do input, porque não se pode multiplicar sequencias não inteiras do tipo string

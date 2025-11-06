@@ -1,0 +1,84 @@
+-------
+Clube: 1861, Ranking: Academia Cantolao, Score: 1266
+-------
+Clube: 1440, Ranking: Alianza Atlético, Score: 1300
+-------
+Clube: 524, Ranking: Alianza Lima, Score: 1429
+-------
+Clube: 1662, Ranking: Alianza Universidad Huanuco, Score: 1283
+-------
+Clube: 832, Ranking: Asociación Deportiva Tarma (ADT), Score: 1369
+-------
+Clube: 661, Ranking: Ayacucho FC, Score: 1398
+-------
+Clube: 1489, Ranking: Bolognesi, Score: 1297
+-------
+Clube: 732, Ranking: Carlos A. Mannucci, Score: 1387
+-------
+Clube: 856, Ranking: CD UT Cajamarca, Score: 1366
+-------
+Clube: 461, Ranking: Cienciano, Score: 1444
+-------
+Clube: 461, Ranking: Cienciano, Score: 1444
+-------
+Clube: 1078, Ranking: Club Atlético Grau, Score: 1338
+-------
+Clube: 1359, Ranking: CNI, Score: 1307
+-------
+Clube: 2043, Ranking: Cobresol, Score: 1254
+-------
+Clube: 1493, Ranking: Comerciantes Unidos, Score: 1297
+-------
+Clube: 988, Ranking: Cusco FC, Score: 1347
+-------
+Clube: 1230, Ranking: Defensor La Bocana, Score: 1322
+-------
+Clube: 837, Ranking: Deportivo Binacional, Score: 1368
+-------
+Clube: 1613, Ranking: Deportivo Llacuabamba, Score: 1287
+-------
+Clube: 1221, Ranking: Deportivo Los Caimanes, Score: 1323
+-------
+Clube: 836, Ranking: Deportivo Municipal, Score: 1368
+-------
+Clube: 401, Ranking: FBC Melgar, Score: 1460
+-------
+Clube: 1522, Ranking: FC Carlos Stein, Score: 1294
+-------
+Clube: 1521, Ranking: José Gálvez, Score: 1294
+-------
+Clube: 1229, Ranking: Juan Aurich, Score: 1322
+-------
+Clube: 2570, Ranking: Kaya F.C.-Iloilo, Score: 1213
+-------
+Clube: 946, Ranking: León de Huánuco, Score: 1353
+-------
+Clube: 1713, Ranking: Molinos El Pirata FC, Score: 1278
+-------
+Clube: 1452, Ranking: Pacífico, Score: 1299
+-------
+Clube: 1671, Ranking: San Simon, Score: 1282
+-------
+Clube: 1028, Ranking: Sport Áncash, Score: 1343
+-------
+Clube: 1069, Ranking: Sport Boys, Score: 1339
+-------
+Clube: 696, Ranking: Sport Huancayo, Score: 1394
+-------
+Clube: 1226, Ranking: Sport Loreto, Score: 1323
+-------
+Clube: 1617, Ranking: Sport Rosario (Huaraz), Score: 1286
+-------
+Clube: 253, Ranking: Sporting Cristal, Score: 1520
+-------
+Clube: 1362, Ranking: Total Chalaco, Score: 1307
+-------
+Clube: 1052, Ranking: Unión Comercio, Score: 1341
+-------
+Clube: 2146, Ranking: United City F.C., Score: 1248
+-------
+Clube: 392, Ranking: Universidad César Vallejo, Score: 1462
+-------
+Clube: 1949, Ranking: Universidad San Martín de Porres, Score: 1260
+-------
+Clube: 374, Ranking: Universitario de Deportes, Score: 1468
