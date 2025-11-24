@@ -1,0 +1,156 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0" version="28.2.5">
+  <diagram name="Página-1" id="ff5LFe2P9E1VfSMab5Uh">
+    <mxGraphModel dx="1614" dy="827" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ctcXey_t0Iw6WrTa2YMd-43" value="&lt;u&gt;Nome&lt;/u&gt; (PK)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ctcXey_t0Iw6WrTa2YMd-44" value="&lt;div&gt;Aluno&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="160" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ctcXey_t0Iw6WrTa2YMd-47" value="Nº CC" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Bf_DImyQ4ZyFUYnqNj4J-3" value="&lt;div&gt;Morada&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-1" value="Data Nascimento" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-2" value="&lt;u&gt;Identificador &lt;/u&gt;(PK)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-3" value="Atividade" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="160" y="150" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-4" value="Designação" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-5" value="Curso" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-6" value="Custo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-7" value="&lt;u&gt;Identificador &lt;/u&gt;(PK)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-8" value="Turma" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="160" y="270" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-9" value="Nº Max. Alunos" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-10" value="Designação" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-11" value="Ano Letivo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-12" value="&lt;u&gt;Nome &lt;/u&gt;(PK)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-13" value="Professor" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="160" y="390" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-14" value="&lt;div&gt;&lt;u&gt;Nº funcionário&amp;nbsp;&lt;/u&gt;&lt;/div&gt;&lt;div&gt;(PK)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-15" value="&lt;div&gt;Morada&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-16" value="Data Nascimento" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-17" value="Nº CC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-18" value="Nº Telemóvel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-19" value="Email" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-26" value="&lt;u&gt;Nome &lt;/u&gt;(PK)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-27" value="Adulto" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="160" y="510" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-28" value="Relação com Aluno" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-29" value="&lt;div&gt;Morada&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-30" value="Data Nascimento" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-31" value="Nº CC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-32" value="Nº Telemóvel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-33" value="Email" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="990" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="rz-Rze9VKl-3ZSwjrEUI-34" target="rz-Rze9VKl-3ZSwjrEUI-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="140" />
+              <mxPoint x="770" y="140" />
+              <mxPoint x="770" y="270" />
+              <mxPoint x="580" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-34" value="&lt;u&gt;Identificador &lt;/u&gt;(FK)&lt;br&gt;[Turma]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rz-Rze9VKl-3ZSwjrEUI-35" target="rz-Rze9VKl-3ZSwjrEUI-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="160" />
+              <mxPoint x="580" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-35" value="&lt;u&gt;Identificador &lt;/u&gt;(FK)&lt;br&gt;[Atividade]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rz-Rze9VKl-3ZSwjrEUI-36" target="rz-Rze9VKl-3ZSwjrEUI-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-36" value="&lt;u&gt;Nome &lt;/u&gt;(FK)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rz-Rze9VKl-3ZSwjrEUI-37" target="rz-Rze9VKl-3ZSwjrEUI-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-37" value="&lt;div&gt;&lt;u&gt;Nº funcionário&amp;nbsp;&lt;/u&gt;&lt;/div&gt;&lt;div&gt;(FK)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rz-Rze9VKl-3ZSwjrEUI-41" target="rz-Rze9VKl-3ZSwjrEUI-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-41" value="&lt;u&gt;Identificador &lt;/u&gt;(FK)&lt;br&gt;[Turma]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rz-Rze9VKl-3ZSwjrEUI-45" target="ctcXey_t0Iw6WrTa2YMd-43">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="570" />
+              <mxPoint x="140" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rz-Rze9VKl-3ZSwjrEUI-45" value="&lt;div&gt;&lt;u&gt;Nome&lt;/u&gt; (FK)&lt;/div&gt;&lt;div&gt;[Aluno]&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
