@@ -1,0 +1,18 @@
+array1: 0 2  
+array2: 0 3 
+array3: 0 4 
+array4: 0 5 
+array5: 0 6
+array6: 0 7
+array7: 0 8 
+array8: 0 9
+array9: 1 9
+
+Melhor caso: array1 com 2 comparações
+Pior caso: array9 e array8 com 9 comparações
+Número médio é: 5.889 ≃ 6   1/n-1 (sum[i] + n-1)
+n = 10 comparações = 9
+PC = 2 | MC = n-1 | MedC = n/2
+PC = 2 | MC = 9 | MedC = 5
+
+Probabilidade = 1/n-1
