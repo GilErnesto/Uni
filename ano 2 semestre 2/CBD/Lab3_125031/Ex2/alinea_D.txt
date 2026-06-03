@@ -1,0 +1,180 @@
+1 - Os últimos 3 comentários introduzidos para um vídeo;
+
+SELECT * FROM comentariosVideo WHERE videoID = 11111111-1111-1111-1111-111111111111 LIMIT 3;
+
+ videoid                              | timecomentario                  | comentario                       | username
+--------------------------------------+---------------------------------+----------------------------------+----------
+ 11111111-1111-1111-1111-111111111111 | 2024-01-27 10:00:00.000000+0000 |            Quando sai a parte 2? |     joao
+ 11111111-1111-1111-1111-111111111111 | 2024-01-15 11:00:00.000000+0000 |         Aprendi muito, obrigada! |    grace
+ 11111111-1111-1111-1111-111111111111 | 2024-01-15 10:00:00.000000+0000 | Excelente tutorial, muito claro! |    frank
+
+2 - Lista das tags de determinado vídeo;
+
+SELECT tags FROM videos WHERE videoID = bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb;
+
+ tags
+---------------------------------------------
+ {'javascript', 'programação', 'typescript'}
+
+3 - Todos os vídeos com a tag Aveiro;
+
+Como estou a usar 'sets' nas tags, e um set não pode ser Partion Key, existem 2 opções sem usar "allow filtering".
+
+Mudar as tabelas de video para que a tag seja em texto, como no exemplo abaixo, já seria funcional e possível. Menos prática
+"""
+CREATE TABLE video (tag TEXT, videoID UUID, nomeVideo TEXT, autor TEXT, timeUpload TIMESTAMP, PRIMARY KEY (tag, videoID));
+
+SELECT * FROM video WHERE tag = 'Aveiro';
+"""
+
+Ou, vendo o trabalho do meu colega Tiago Vale, se criar um indice nas tags já consigo usar o CONTAINS nas tags, sendo assim a solução sim possível. Melhor Solução.
+"""
+CREATE INDEX IF NOT EXISTS ind_tag ON videos(tags);
+
+SELECT * FROM videos WHERE tags CONTAINS 'Aveiro';
+"""
+
+ videoid | autor | descricao | nomevideo | tags | timeupload
+---------+-------+-----------+-----------+------+------------
+
+4 - a - Os últimos 5 eventos de determinado vídeo realizados por um utilizador;
+
+SELECT * FROM eventos WHERE username = 'hugo' AND videoID = 22222222-2222-2222-2222-222222222222 LIMIT 5;
+
+ username | videoid                              | timeevento                      | tipoevento | videotime
+----------+--------------------------------------+---------------------------------+------------+-----------
+     hugo | 22222222-2222-2222-2222-222222222222 | 2024-01-16 09:30:00.000000+0000 |       stop |      1800
+     hugo | 22222222-2222-2222-2222-222222222222 | 2024-01-16 09:10:00.000000+0000 |      pause |       600
+     hugo | 22222222-2222-2222-2222-222222222222 | 2024-01-16 09:00:00.000000+0000 |       play |         0
+
+4 - b - Todos os eventos de determinado utilizador;
+
+SELECT * FROM eventos WHERE username = 'frank';
+
+ username | videoid                              | timeevento                      | tipoevento | videotime
+----------+--------------------------------------+---------------------------------+------------+-----------
+    frank | 11111111-1111-1111-1111-111111111111 | 2024-01-15 10:20:00.000000+0000 |       stop |      1140
+    frank | 11111111-1111-1111-1111-111111111111 | 2024-01-15 10:06:00.000000+0000 |       play |       300
+    frank | 11111111-1111-1111-1111-111111111111 | 2024-01-15 10:05:00.000000+0000 |      pause |       300
+    frank | 11111111-1111-1111-1111-111111111111 | 2024-01-15 10:00:00.000000+0000 |       play |         0
+
+4 - c - Todos os eventos de determinado utilizador do tipo "pause";
+
+SELECT * FROM eventos WHERE username = 'lena' AND tipoEvento = 'pause';
+
+ username | videoid                              | timeevento                      | tipoevento | videotime
+----------+--------------------------------------+---------------------------------+------------+-----------
+     lena | 44444444-4444-4444-4444-444444444444 | 2024-01-18 09:15:00.000000+0000 |      pause |       900
+
+5 - Vídeos partilhados por determinado utilizador 'alice' num determinado período de tempo 10/01/2024 a 12/01/2024;
+
+SELECT * FROM videosAutor WHERE autor = 'alice' AND timeUpload >= '2024-01-10 00:00:00' AND timeUpload <= '2024-01-12 23:59:59';
+
+ autor | timeupload                      | videoid                              | nomevideo
+-------+---------------------------------+--------------------------------------+-------------------------
+ alice | 2024-01-12 11:00:00.000000+0000 | 33333333-3333-3333-3333-333333333333 |    Docker em 10 Minutos
+ alice | 2024-01-10 10:00:00.000000+0000 | 11111111-1111-1111-1111-111111111111 | Introdução ao Cassandra
+
+6 - Os últimos 10 vídeos, ordenado inversamente pela data da partilhada;
+
+É impossivel porque o ORDER BY não é da tabela toda, mas sim de um conjunto de rows filtradas pela Partition Key, como todo o vídeo tem uma ID diferente, cada vídeo é a sua row, ou seja é impossivel ordenar os últimos 10 vídeos.
+
+7 - Todos os seguidores (followers) de determinado vídeo;
+
+SELECT * FROM videoFollowers WHERE videoID = 33333333-3333-3333-3333-333333333333;
+
+ videoid                              | username
+--------------------------------------+----------
+ 33333333-3333-3333-3333-333333333333 |    frank
+ 33333333-3333-3333-3333-333333333333 |    grace
+
+8 - Todos os comentários (dos vídeos) que determinado utilizador está a seguir (following);
+
+É impossivel, porque teriamos que fazer um JOIN entre a tabela videoFollowers e comentariosVideo. Como Cassandra não suporta JOINs e cada query só pode aceder a uma tabela, a pesquisa não é realizável.
+
+9 - Os 5 vídeos com maior rating;
+
+Como já foi dito na pergunta 6, é impossível porque o ORDER BY não é da tabela toda, mas sim de um conjunto de rows filtradas pela Partition Key. Como cada vídeo tem um videoID diferente, cada vídeo está na sua própria partição, ou seja, é impossível ordenar globalmente os 5 vídeos com maior rating.
+
+10 - Uma query que retorne todos os vídeos e que mostre claramente a forma pela qual estão ordenados;
+
+Como já referido, é impossível porque não se consegue ordenar a tabela toda, só o que for filtrado pela Partition Key.
+
+11 - Lista com as Tags existentes e o número de vídeos catalogados com cada uma delas;
+
+SELECT tag, COUNT(*) FROM videosTag GROUP BY tag;
+
+ tag         | count
+-------------+-------
+          ml |     1
+  iniciantes |     1
+       nosql |     1
+  containers |     1
+      github |     1
+          ia |     1
+         vue |     1
+  versioning |     1
+ programação |     2
+       cache |     1
+      devops |     3
+       react |     1
+      python |     2
+    frontend |     2
+      docker |     1
+  javascript |     3
+   cassandra |     1
+       linux |     1
+         sql |     1
+     backend |     1
+  kubernetes |     1
+  postgresql |     1
+         git |     1
+    terminal |     1
+    database |     2
+  typescript |     1
+       redis |     1
+         k8s |     1
+
+12 - Vídeos de uma playlist de utilizador, ordenados do mais recente para o mais antigo;
+
+CREATE TABLE playlistVideos (playlistID UUID, timeAdicao TIMESTAMP, videoID UUID, nomeVideo TEXT, autor TEXT, addedBy TEXT, PRIMARY KEY (playlistID, timeAdicao, videoID)) WITH CLUSTERING ORDER BY (timeAdicao DESC, videoID ASC);
+
+
+Mostre os 20 primeiros vídeos da playlist de um utilizador
+
+SELECT * FROM playlistVideos WHERE playlistID = dddddddd-dddd-dddd-dddd-dddddddddddd LIMIT 20;
+
+ playlistid                           | timeadicao                      | videoid                              | addedby | autor | nomevideo
+--------------------------------------+---------------------------------+--------------------------------------+---------+-------+-------------------------
+ dddddddd-dddd-dddd-dddd-dddddddddddd | 2024-01-24 21:00:00.000000+0000 | 99999999-9999-9999-9999-999999999999 |   frank | alice |       Kubernetes Basics
+ dddddddd-dddd-dddd-dddd-dddddddddddd | 2024-01-24 20:45:00.000000+0000 | 33333333-3333-3333-3333-333333333333 |   frank | alice |    Docker em 10 Minutos
+ dddddddd-dddd-dddd-dddd-dddddddddddd | 2024-01-24 20:30:00.000000+0000 | 11111111-1111-1111-1111-111111111111 |   frank | alice | Introdução ao Cassandra
+ dddddddd-dddd-dddd-dddd-dddddddddddd | 2024-01-24 20:10:00.000000+0000 | 66666666-6666-6666-6666-666666666666 |   frank |   bob |     PostgreSQL Avançado
+ dddddddd-dddd-dddd-dddd-dddddddddddd | 2024-01-24 20:00:00.000000+0000 | 77777777-7777-7777-7777-777777777777 |   frank |   eve |   Linux para Developers
+
+13 - Vídeos mais visualizados por dia
+
+CREATE TABLE videoViewsByDay (viewDate  DATE, videoID UUID, views COUNTER, PRIMARY KEY (viewDate, videoID));
+
+
+Qual o vídeo mais visto no dia 10/02/2025
+
+SELECT * FROM videoViewsByDay WHERE viewDate = '2024-01-10' LIMIT 1;
+
+ viewdate   | videoid                              | views
+------------+--------------------------------------+-------
+ 2024-01-10 | 11111111-1111-1111-1111-111111111111 |  3040
+
+14 - Histórico de vídeos concluídos por utilizador;
+
+CREATE TABLE historicoVisionamentos (username TEXT, timeVisto TIMESTAMP, videoID UUID, nomeVideo TEXT, percentagemVisionamento INT, PRIMARY KEY (username, timeVisto)) WITH CLUSTERING ORDER BY (timeVisto DESC);
+
+
+Liste todo o histórico de um utilizador
+
+SELECT * FROM historicoVisionamentos WHERE username = 'frank';
+
+ username | timevisto                       | nomevideo               | percentagemvisionamento | videoid
+----------+---------------------------------+-------------------------+-------------------------+--------------------------------------
+    frank | 2024-01-23 09:40:00.000000+0000 |       Kubernetes Basics |                      96 | 99999999-9999-9999-9999-999999999999
+    frank | 2024-01-15 10:20:00.000000+0000 | Introdução ao Cassandra |                     100 | 11111111-1111-1111-1111-111111111111

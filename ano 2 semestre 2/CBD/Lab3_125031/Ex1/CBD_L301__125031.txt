@@ -1,0 +1,127 @@
+Connected to Test Cluster at 127.0.0.1:9042
+[cqlsh 6.2.0 | Cassandra 5.0.3 | CQL spec 3.4.7 | Native protocol v5]
+Use HELP for help.
+cqlsh> CREATE KEYSPACE uni
+   ... WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+// Cria um keyspace, que serve como espaço onde ficam as tabelas.
+// O "SimpleStrategy" vai indicar a estratégia de replicação, neste caso simples, que serve para testes.
+// O "replication_factor: 1" significa que cada dado vai ter apenas uma cópia no cluster.
+
+cqlsh> use uni
+   ... ;
+cqlsh:uni> CREATE TABLE alunos (
+       ... id int PRIMARY KEY,
+       ... nome text,
+       ... idade int);
+
+cqlsh:uni> INSERT INTO alunos (id, nome, idade)
+       ... VALUES (125031, 'Gil', 20);
+
+cqlsh:uni> SELECT * FROM alunos
+       ... ;
+
+ id     | idade | nome
+--------+-------+------
+ 125031 |    20 |  Gil
+
+(1 rows)
+cqlsh:uni> DESCRIBE TABLES;
+
+alunos
+
+cqlsh:uni> DESCRIBE TABLE alunos;
+
+CREATE TABLE uni.alunos (
+    id int PRIMARY KEY,
+    idade int,
+    nome text
+) WITH additional_write_policy = '99p'
+    AND allow_auto_snapshot = true
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND cdc = false
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND memtable = 'default'
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 0
+    AND extensions = {}
+    AND gc_grace_seconds = 864000
+    AND incremental_backups = true
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99p';
+
+// Descrição detalhada da tabela, contendo as colunas defenidas e também os parâmetros internos de funcionamento da mesma.
+
+cqlsh:uni> INSERT INTO alunos (id, nome, idade) VALUES (125032, 'ernesto', 25);
+
+cqlsh:uni> UPDATE alunos SET idade
+       ... = 20
+       ... WHERE id = 125032;
+
+cqlsh:uni> SELECT * FROM alunos ;
+
+ id     | idade | nome
+--------+-------+---------
+ 125032 |    20 | ernesto
+ 125031 |    20 |     Gil
+
+(2 rows)
+cqlsh:uni> DELETE FROM alunos WHERE id = 125032;
+
+cqlsh:uni> SELECT * FROM alunos ;
+
+ id     | idade | nome
+--------+-------+------
+ 125031 |    20 |  Gil
+
+ cqlsh:uni> ALTER TABLE alunos ADD emails SET<TEXT>;
+ cqlsh:uni> ALTER TABLE alunos ADD hobbies LIST<TEXT>;
+ cqlsh:uni> select * from alunos;
+
+ id     | emails | hobbies | idade | nome
+--------+--------+---------+-------+------
+ 125031 |   null |    null |    20 |  Gil
+
+(1 rows)
+cqlsh:uni> INSERT INTO alunos (id, emails, hobbies, idade, nome) VALUES (125030, {'maf@ua.pt', 'maf@sapo.pt'}, ['dança', 'séries'], 21, 'Mafalda') ;
+
+cqlsh:uni> INSERT INTO alunos (id, nome) VALUES (1, 'TTL teste') USING TTL 60;
+
+cqlsh:uni> SELECT * FROM alunos;
+
+ id     | emails                       | hobbies             | idade | nome
+--------+------------------------------+---------------------+-------+-----------
+      1 |                         null |                null |  null | TTL teste
+ 125030 | {'maf@sapo.pt', 'maf@ua.pt'} | ['dança', 'séries'] |    21 |   Mafalda
+ 125031 |                         null |                null |    20 |       Gil
+ 3 rows)
+cqlsh:uni> SELECT id, TTL(nome) FROM alunos;
+
+ id     | ttl(nome)
+--------+-----------
+      1 |         7
+ 125030 |      null
+ 125031 |      null
+
+(3 rows)
+cqlsh:uni> SELECT id, nome FROM alunos;
+
+ id     | nome
+--------+---------
+ 125030 | Mafalda
+ 125031 |     Gil
+
+(2 rows)
+cqlsh:uni> DROP TABLE alunos
+       ... ;
+
+cqlsh:uni> SELECT * FROM alunos;
+InvalidRequest: Error from server: code=2200 [Invalid query] message="table alunos does not exist"
+
+cqlsh:uni>

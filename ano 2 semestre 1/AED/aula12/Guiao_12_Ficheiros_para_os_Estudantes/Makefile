@@ -5,7 +5,7 @@
 
 CFLAGS += -g -Wall -Wextra
 
-TARGETS = example1 example2 example3
+TARGETS = example1 example2 example3 test_traversals exemplo_aplicacao1 exemplo_aplicacao2
 
 all: $(TARGETS)
 
@@ -16,6 +16,14 @@ example2: example2.o Graph.o GraphDFSRec.o IntegersStack.o SortedList.o
 example3: example3.o Graph.o GraphBFSWithQueue.o IntegersStack.o \
  IntegersQueue.o GraphDFSRec.o GraphDFSWithStack.o SortedList.o
 
+test_traversals: test_traversals.o Graph.o GraphBFSWithQueue.o IntegersStack.o \
+ IntegersQueue.o GraphDFSRec.o GraphDFSWithStack.o SortedList.o
+
+exemplo_aplicacao1: exemplo_aplicacao1.o Graph.o GraphDFSRec.o IntegersStack.o SortedList.o
+
+exemplo_aplicacao2: exemplo_aplicacao2.o Graph.o GraphBFSWithQueue.o IntegersStack.o \
+ IntegersQueue.o SortedList.o
+
 # Dependencies of source files (obtained with gcc -MM)
 
 example1.o: example1.c Graph.h
@@ -24,6 +32,13 @@ example2.o: example2.c Graph.h GraphDFSRec.h
 
 example3.o: example3.c Graph.h GraphBFSWithQueue.h IntegersStack.h \
  GraphDFSRec.h GraphDFSWithStack.h
+
+test_traversals.o: test_traversals.c Graph.h GraphBFSWithQueue.h \
+ IntegersStack.h GraphDFSRec.h GraphDFSWithStack.h
+
+exemplo_aplicacao1.o: exemplo_aplicacao1.c Graph.h GraphDFSRec.h
+
+exemplo_aplicacao2.o: exemplo_aplicacao2.c Graph.h GraphBFSWithQueue.h IntegersStack.h
 
 Graph.o: Graph.c Graph.h SortedList.h
 

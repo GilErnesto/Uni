@@ -1,0 +1,29 @@
+ping
+config get save
+config set loglevel "notice"
+congif get loglevel
+CONFIG GET loglevel
+set newkey "the redis string"
+get newkey
+lpush w3resourcelist redis
+lpush w3resourcelist mongodb
+lpush w3resourcelist rabitmq
+lpush w3resourcelist GilGuedes
+lrang w3resourcelist 0 10
+lrange w3resourcelist 0 10
+lpop w3resourcelist
+rpop w3resourcelist
+lrange w3resourcelist 0 10
+ltrim w3resourcelist 0 1
+lrange w3resourcelist 0 10
+sadd w3resourcelist redis
+sadd tutorial redis
+sadd tutorial mongo
+smembers tutorial
+hmset user:1 username tutorial pass 123 points 100
+hgetall user:1
+redis-cli shutdown
+save
+redis-cli shutdown
+shutdown
+ls

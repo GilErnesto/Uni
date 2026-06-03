@@ -1,0 +1,29 @@
+-- 1. UTILIZADORES
+SELECT JSON * FROM utilizadores;
+
+-- 2. VIDEOS
+SELECT JSON * FROM videos;
+
+-- 3. VIDEO FOLLOWERS
+SELECT JSON * FROM videoFollowers;
+
+-- 4. EVENTOS
+SELECT JSON * FROM eventos;
+
+-- 5. RATINGS
+SELECT JSON * FROM ratings;
+
+-- 6. VIDEOS POR AUTOR
+SELECT JSON * FROM videosAutor;
+
+-- 7. COMENTARIOS POR UTILIZADOR
+SELECT JSON * FROM comentariosUser;
+
+-- 8. COMENTARIOS POR VIDEO
+SELECT JSON * FROM comentariosVideo;
+
+-- 9. VIDEOS POR TAG
+SELECT JSON * FROM videosTag;
+
+-- 10. RATINGS SUMMARY
+SELECT JSON * FROM ratingsSum;

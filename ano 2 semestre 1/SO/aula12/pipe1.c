@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
               return 1;
        case 0:
               close(fdp[0]);
-              write(fdp[1],"Hello Dad!",11);
+              write(fdp[1],"Good morning!",11);
               break;
        default:
               close(fdp[1]);

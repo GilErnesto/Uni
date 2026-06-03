@@ -1,0 +1,235 @@
+Queries find:
+
+// 1 - Portugal + Comedy
+db.movies.find({countries: "Portugal", genres: "Comedy"}).projection({title: 1, runtime:1, "imdb.rating":1, _id:0})
+
+{
+  runtime: 124,
+  title: 'Airbag',
+  imdb: {
+    rating: 6.8
+  }
+}
+
+// 2 - Rating >=9 + >10k votos
+db.movies.find({"imdb.rating": {$gte: 9.0}, "imdb.votes": {$gt: 10000}}).projection({title:1, "awards.text":1, _id:0})
+
+{
+  title: 'Band of Brothers',
+  awards: {
+    text: 'Won 1 Golden Globe. Another 33 wins & 24 nominations.'
+  }
+}
+
+{
+  title: 'The Dark Knight',
+  awards: {
+    text: 'Won 2 Oscars. Another 142 wins & 106 nominations.'
+  }
+}
+
+// 3 - Shakespeare + >10 wins
+db.movies.find({writers: /William Shakespeare/, "awards.wins": {$gt: 10}}).projection({title:1, fullplot:1, countries:1, _id:0})
+
+{
+  title: 'Ran',
+  fullplot: "A story of greed, a lust for power, and ultimate revenge. The Great Lord Hidetora Ichimonji has decided to step aside to make room for the younger blood of his three sons, Taro, Jiro, and Saburo, the Lord's only wish now being to live out his years as an honored guest in the castle of each of his sons in turn. While the older two sons flatter their father, the youngest son attempts to warn him of the folly of expecting the three sons to remain united; enraged at the younger son's attempt to point out the danger, the father banishes him. True to the younger son's warning, however, the oldest Son soon conspires with the second son to strip The Great Lord of everything, even his title.",
+  countries: [
+    'Japan',
+    'France'
+  ]
+}
+
+{
+  title: 'Henry V',
+  fullplot: 'King Henry V of England is insulted by the King of France. As a result, he leads his army into battle against France. Along the way, the young king must struggle with the sinking morale of his troops and his own inner doubts. The war culminates at the bloody Battle of Agincourt.',
+  countries: [
+    'UK'
+  ]
+}
+
+{
+  title: 'Omkara',
+  fullplot: `Advocate Raghunath Mishra has arranged the marriage of his daughter, Dolly, with Rajan, knowing fully well that Dolly loves Omkara Shukla. Before the marriage could take place, the groom's party is attacked, they flee, and Dolly is reportedly abducted. Raghunath is able to trace Dolly to Omkara, a criminal and hit-man, a verbal confrontation ensues until Politician Bhaisaab telephonically intervenes, and a crestfallen Raghunath faces the reality that Dolly was not abducted but is here with Omkara by her own free will. He warns Omkara, and departs. Shortly thereafter, Bhaisaab is shot at and wounded, announces that Omkara should stand in the next election, and as a result, Omkara appoints one of his lieutenants', Keshav Upadhyay in his place as the 'Bahubali". Omkara realizes that he may have blundered in having Keshav succeed him, as Keshav is unable to control his temper when under the influence of alcohol, which puts him in the bad books of Omkara. Then Omkara suspects that Keshav is having an affair with Dolly, as both had been fellow-collegians. With Omkara's marriage with Dolly getting close, he asks his other lieutenant, Ishwar Tyagi, to obtain proof of Keshav's affair with Dolly or face the consequences, as Omkara remembers Raghunath's warning that when a daughter is not true to her father, she will never be true to anyone. Watch what happens when Ishwar produces proof shortly after the marriage, and the impact this has on Dolly, Omkara, Keshav, Ishwar, and Ishwar's wife, Indu.`,
+  countries: [
+    'India'
+  ]
+}
+
+// 4 - Horror <90min + Japanese
+db.movies.find({genres: "Horror", runtime: {$lte: 90}, languages: /Japanese/}).projection({title:1, _id:0})
+
+{
+  title: 'Daikaijè kèchèsen: Gamera tai Gyaosu'
+}
+
+{
+  title: 'Aragami'
+}
+
+// 5 - Diretor Terence Young + rating 6-7
+db.movies.find({directors: "Terence Young", "imdb.rating": {$gt: 6.0, $lte: 7.0}}).projection({title:1, runtime:1, "imdb.rating":1, directors:1, _id:0})
+
+{
+  runtime: 130,
+  title: 'Thunderball',
+  directors: [
+    'Terence Young'
+  ],
+  imdb: {
+    rating: 7
+  }
+}
+
+{
+  runtime: 140,
+  title: 'Triple Cross',
+  directors: [
+    'Terence Young'
+  ],
+  imdb: {
+    rating: 6.4
+ }
+}
+
+{
+  runtime: 140,
+  title: 'Triple Cross',
+  directors: [
+    'Terence Young'
+  ],
+  imdb: {
+    rating: 6.4
+  }
+}
+
+// 6 - >4 cast + Drama + rating >8.5
+db.movies.find({"cast.3": {$exists: true}, genres: "Drama", "imdb.rating": {$gt: 8.5}}).projection({title:1, cast:1, "imdb.rating":1, genres:1, _id:0})
+
+{
+  genres: [
+    'Action',
+    'Drama',
+    'History'
+  ],
+  cast: [
+    'Tom Hanks',
+    'Nick Searcy',
+    'Lane Smith',
+    'David Andrews'
+  ],
+  title: 'From the Earth to the Moon',
+  imdb: {
+    rating: 8.9
+  }
+}
+
+{
+  imdb: {
+    rating: 8.6
+  },
+  genres: [
+    'Action',
+    'Drama',
+    'War'
+  ],
+  title: 'Saving Private Ryan',
+  cast: [
+    'Tom Hanks',
+    'Tom Sizemore',
+    'Edward Burns',
+    'Barry Pepper'
+  ]
+}
+
+Queries aggreate:
+// 1 - Top 5 média de rating IMDB por gênero
+db.movies.aggregate([{$unwind: "$genres"}, {$group:{_id: "$genres", avgRating:{$avg: "$imdb.rating"}}}, {$sort:{avgRating:-1}}, {$limit: 5}])
+
+{
+  _id: 'Documentary',
+  avgRating: 7.725
+}
+
+{
+  _id: 'Short',
+  avgRating: 7.509090909090909
+}
+
+{
+  _id: 'History',
+  avgRating: 7.305405405405406
+}
+
+{
+  _id: 'Film-Noir',
+  avgRating: 7.3
+}
+
+{
+  _id: 'Biography',
+  avgRating: 6.996774193548387
+}
+
+// 2 - Runtime médio e total de votos no gênero Action
+db.movies.aggregate([{$match:{genres: "Action"}}, {$group:{_id: null, avgRuntime:{$avg: "$runtime"}, totalVotes:{$sum: "$imdb.votes"}}}])
+
+{
+  _id: null,
+  avgRuntime: 111.97710437710438,
+  totalVotes: 82944117
+}
+
+// 3 - Runtime máx/mín/média global
+db.movies.aggregate([{$group:{_id: null, maxRuntime:{$max: "$runtime"}, minRuntime:{$min: "$runtime"}, avgRuntime:{$avg: "$runtime"}}}])
+
+{
+  _id: null,
+  maxRuntime: 1256,
+  minRuntime: 6,
+  avgRuntime: 111.97710437710438
+}
+
+// 4 - Total de moneações por género
+db.movies.aggregate([{$unwind: "$genres" }, {$group:{_id: "$genres", totalNominations:{$sum: "$awards.nominations"}, }}, {$sort:{totalNominations:-1}}])
+
+{
+  _id: 'Action',
+  totalNominations: 7726
+}
+
+{
+  _id: 'Adventure',
+  totalNominations: 3482
+}
+
+{
+  _id: 'Drama',
+  totalNominations: 2589
+}
+
+// 5 - Diretor com mais filmes
+db.movies.aggregate([{$unwind: "$directors"}, {$group:{_id: "$directors", count:{$sum:1}}}, {$sort:{count:-1}}, {$limit:1}])
+
+{
+  _id: 'Tony Scott',
+  count: 13
+}
+
+// 6 - Top 3 linguas com menos wins
+db.movies.aggregate([{$unwind: "$languages"}, {$match:{"awards.wins":{$exists: true, $ne: null}}}, {$group:{_id: "$languages", totalWins:{$sum: "$awards.wins"},}}, {$sort:{totalWins:1}}, { $limit:3}])
+
+{
+  _id: 'Assyrian Neo-Aramaic',
+  totalWins: 0
+}
+
+{
+  _id: 'Esperanto',
+  totalWins: 0
+}
+
+{
+  _id: 'Zulu',
+  totalWins: 0
+}

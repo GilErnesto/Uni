@@ -1,0 +1,49 @@
+show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   72.00 KiB
+show collections
+use local
+switched to db local
+show collections
+startup_log
+use test
+switched to db test
+use naoExiste
+switched to db naoExiste
+use tes
+switched to db tes
+use cbd
+switched to db cbd
+show collections
+db.test.insertOne({nome: "Gil", curso: "Eng Informática", matricula: 2})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69a72f3c2dfcb226efc1d33d')
+}
+db.test.find()
+{
+  _id: ObjectId('69a72f3c2dfcb226efc1d33d'),
+  nome: 'Gil',
+  curso: 'Eng Informática',
+  matricula: 2
+}
+db.test.find({matricula: 2})
+{
+  _id: ObjectId('69a72f3c2dfcb226efc1d33d'),
+  nome: 'Gil',
+  curso: 'Eng Informática',
+  matricula: 2
+}
+db.test.find({matricula: 3})
+db.test.deleteMany({})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.test.find()
+show dbs
+admin   40.00 KiB
+cbd     48.00 KiB
+config  96.00 KiB
+local   72.00 KiB

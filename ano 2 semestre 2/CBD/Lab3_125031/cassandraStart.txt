@@ -1,0 +1,2 @@
+sudo systemctl start cassandra.service
+CQLSH_PYTHON=/opt/python311/bin/python3.11 cqlsh

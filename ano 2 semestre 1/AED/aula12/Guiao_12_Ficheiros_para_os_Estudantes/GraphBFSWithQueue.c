@@ -35,21 +35,63 @@ GraphBFSWithQueue* GraphBFSWithQueueExecute(Graph* g,
 
   unsigned int numVertices = GraphGetNumVertices(g);
 
-  //
-  // TO BE COMPLETED !!
-  //
-  // CREATE AND INITIALIZE
-  // traversal->marked
-  // traversal->distance
-  // traversal->predecessor
-  //
+  // CREATE AND INITIALIZE traversal->marked
+  traversal->marked = (unsigned int*)calloc(numVertices, sizeof(unsigned int));
+  assert(traversal->marked != NULL);
+  
+  // CREATE AND INITIALIZE traversal->distance
+  traversal->distance = (int*)malloc(numVertices * sizeof(int));
+  assert(traversal->distance != NULL);
+  for (unsigned int i = 0; i < numVertices; i++) {
+    traversal->distance[i] = -1;  // -1 means not reachable
+  }
+  
+  // CREATE AND INITIALIZE traversal->predecessor
+  traversal->predecessor = (int*)malloc(numVertices * sizeof(int));
+  assert(traversal->predecessor != NULL);
+  for (unsigned int i = 0; i < numVertices; i++) {
+    traversal->predecessor[i] = -1;  // -1 means no predecessor
+  }
 
   traversal->graph = g;
   traversal->startVertex = startVertex;
 
   // CARRY OUT THE TRAVERSAL
-
-  // TO BE COMPLETED !!
+  
+  // Create a queue for BFS
+  Queue* queue = QueueCreate(numVertices);
+  
+  // Mark start vertex and set its distance to 0
+  traversal->marked[startVertex] = 1;
+  traversal->distance[startVertex] = 0;
+  QueueEnqueue(queue, startVertex);
+  
+  // BFS iteration
+  while (!QueueIsEmpty(queue)) {
+    unsigned int vertex = QueueDequeue(queue);
+    
+    // Get adjacent vertices
+    unsigned int* neighbors = GraphGetAdjacentsTo(g, vertex);
+    
+    // Process all neighbors
+    for (unsigned int i = 1; i <= neighbors[0]; i++) {
+      unsigned int w = neighbors[i];
+      
+      // If not yet visited
+      if (traversal->marked[w] == 0) {
+        traversal->marked[w] = 1;
+        traversal->distance[w] = traversal->distance[vertex] + 1;
+        traversal->predecessor[w] = vertex;
+        QueueEnqueue(queue, w);
+      }
+    }
+    
+    // Free neighbors array
+    free(neighbors);
+  }
+  
+  // Clean up
+  QueueDestroy(&queue);
 
   return traversal;
 }
@@ -60,6 +102,7 @@ void GraphBFSWithQueueDestroy(GraphBFSWithQueue** p) {
   GraphBFSWithQueue* aux = *p;
 
   free(aux->marked);
+  free(aux->distance);
   free(aux->predecessor);
 
   free(*p);
@@ -114,7 +157,17 @@ void GraphBFSWithQueueShowPath(const GraphBFSWithQueue* p, unsigned int v) {
 void GraphBFSWithQueueDisplay(const GraphBFSWithQueue* p) {
   assert(p != NULL);
 
-  // TO BE COMPLETED !!
+  unsigned int numVertices = GraphGetNumVertices(p->graph);
+  
+  printf("Graph BFS With Queue traversal from vertex %u:\n", p->startVertex);
+  printf("Vertex | Marked | Distance | Predecessor\n");
+  printf("-------|--------|----------|------------\n");
+  
+  for (unsigned int i = 0; i < numVertices; i++) {
+    printf("  %4u | %6u | %8d | %11d\n", i, p->marked[i], 
+           p->distance[i], p->predecessor[i]);
+  }
+  printf("\n");
 }
 
 // NEW --- Display the Paths-Tree in DOT format

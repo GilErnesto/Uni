@@ -1,0 +1,71 @@
+// 125031
+#1
+MATCH (p:Person)-[:ACTED_IN]->(m_Movie)<-[:DIRECTED]-(p) RETURN p.name, m.title
+
+#2
+MATCH (p:Person)-[:ACTED_IN]->(m:Movie) WHERE m.released>= 2005 RETURN p.name
+
+#3
+// aparece só os nodes
+MATCH (a)-[r]->(b) WITH a, b, count(r) AS total WHERE total > 1 RETURN a, b
+
+#4
+// distinct não funciona porque p1-p2 e p2-p1 são linhas diferentes
+MATCH (p1:Person)-[:REVIEWED]->(m:Movie)<-[:REVIEWED]-(p2:Person) WHERE p1.name<p2.name RETURN p1.name, p2.name, m.title
+
+#5
+MATCH (p1:Person)-[:ACTED_IN]->(m:Movie)<-[:ACTED_IN]-(p2:Person) WHERE p1.name < p2.name WITH p1, p2, count(m) AS total WHERE total > 1 RETURN p1.name, p2.name
+
+#6
+// não posso usar o where porque não é um filtro
+MATCH (p:Person)-[:ACTED_IN]->(m:Movie {title: "Apollo 13"}) RETURN avg(m.released - p.born) AS IdadeMedia
+
+#7
+MATCH (p:Person)-[:ACTED_IN]->(m:Movie) WITH m.title AS Filme, avg(m.released - p.born) AS idadeMedia, round(avg(m.released - p.born), 2) AS rouded RETURN Filme, rouded ORDER BY idadeMedia DESC LIMIT 10
+
+#8
+MATCH (p:Person)-[:ACTED_IN]->(m:Movie) WITH m, avg(m.released - p.born) AS idadeMedia ORDER BY idadeMedia ASC LIMIT 1
+MATCH (p2:Person)-[a:ACTED_IN]->(m) RETURN p2, a, m
+
+#9
+// https://neo4j.com/docs/cypher-manual/current/patterns/shortest-paths/
+MATCH path = SHORTEST 1 (john:Person)-[*]-(demi:Person) WHERE john.name= "John Cusack" AND demi.name= "Demi Moore" RETURN path
+
+#10
+MATCH path = SHORTEST 1 (keanu:Person)-[*]-(tom:Person) WHERE keanu.name= "Keanu Reeves" AND tom.name= "Tom Cruise" RETURN length(path)
+
+#11
+MATCH path = SHORTEST 1 (jim:Person)-[*]-(kevin:Person) WHERE jim.name STARTS WITH "Jim" AND kevin.name STARTS WITH "Kevin" RETURN jim.name, kevin.name, length(path)
+
+#12
+MATCH path = SHORTEST 1 (jim:Person)-[*]-(p:Person) WHERE jim.name= "Jim Cash" AND jim <> p AND length(path)= 2 RETURN jim.name, p.name, length(path)
+
+#13
+MATCH path = SHORTEST 1 (kevin:Person)-[*]-(p:Person) WHERE kevin.name= "Kevin Bacon" AND kevin <> p RETURN max(length(path))
+
+#14
+MATCH path = SHORTEST 1 (p1:Person)-[*]-(p2:Person) WHERE p1 <> p2 RETURN max(length(path))
+
+#15
+MATCH path = SHORTEST 1 (p1:Person)-[*]-(p2:Person) WHERE elementId(p1) < elementId(p2) RETURN length(path) AS Tamanho, count(*) ORDER BY Tamanho DESC
+
+#16
+// 1º MATCH -> fixa os nós ; 2º -> Calcula o caminho
+// :ACTED_IN* -> ACTED_IN em qualquer profundidade
+MATCH (p1:Person), (p2:Person) WHERE elementId(p1) < elementId(p2)
+MATCH path = SHORTEST 1 (p1)-[:ACTED_IN*]-(p2) WITH p1, p2, length(path) AS distancia WITH p1, avg(distancia) AS distanciaMedia RETURN p1.name AS Pessoa, distanciaMedia ORDER BY distanciaMedia ASC LIMIT 10
+
+#17
+MATCH (p:Person)-[r:ACTED_IN]->(m:Movie) WHERE any(role IN r.roles WHERE role STARTS WITH "Dr.") RETURN p.name AS Ator, r.roles AS ListaRoles
+
+#18
+// Encontre o diretor que trabalhou com o maior número de atores distintos
+MATCH (p1:Person)-[:DIRECTED]->(m:Movie)<-[:ACTED_IN]-(p2:Person) WITH p1, count(DISTINCT p2) AS totalAtores RETURN p1.name AS Diretor, totalAtores LIMIT 1
+
+#19
+// Agrupe os atores por década de nascimento e apresente o total de filmes realizados
+MATCH (p:Person)-[:ACTED_IN]->(m:Movie) WITH (p.born / 10) * 10 AS decada, count(m) AS totalFilmes RETURN decada, totalFilmes ORDER BY decada ASC
+
+#20
+// Encontre grupos de 2 atores que co atuaram em 2 filmes diferentes
+MATCH (p1:Person)-[:ACTED_IN]->(m1:Movie)<-[:ACTED_IN]-(p2:Person)-[:ACTED_IN]->(m2:Movie)<-[:ACTED_IN]-(p1) WHERE p1 <> p2 AND m1 <> m2 AND elementId(p1) < elementId(p2) AND elementId(m1) < elementId(m2) RETURN p1.name AS AtorA, p2.name AS AtorB, m1.title AS Filme1, m2.title AS Filme2

@@ -1,0 +1,146 @@
+[
+  {
+    "tag": "ml",
+    "videoid": "44444444-4444-4444-4444-444444444444"
+  },
+  {
+    "tag": "iniciantes",
+    "videoid": "22222222-2222-2222-2222-222222222222"
+  },
+  {
+    "tag": "nosql",
+    "videoid": "11111111-1111-1111-1111-111111111111"
+  },
+  {
+    "tag": "containers",
+    "videoid": "33333333-3333-3333-3333-333333333333"
+  },
+  {
+    "tag": "github",
+    "videoid": "88888888-8888-8888-8888-888888888888"
+  },
+  {
+    "tag": "ia",
+    "videoid": "44444444-4444-4444-4444-444444444444"
+  },
+  {
+    "tag": "vue",
+    "videoid": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+  },
+  {
+    "tag": "versioning",
+    "videoid": "88888888-8888-8888-8888-888888888888"
+  },
+  {
+    "tag": "programação",
+    "videoid": "22222222-2222-2222-2222-222222222222"
+  },
+  {
+    "tag": "programação",
+    "videoid": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"
+  },
+  {
+    "tag": "cache",
+    "videoid": "cccccccc-cccc-cccc-cccc-cccccccccccc"
+  },
+  {
+    "tag": "devops",
+    "videoid": "33333333-3333-3333-3333-333333333333"
+  },
+  {
+    "tag": "devops",
+    "videoid": "77777777-7777-7777-7777-777777777777"
+  },
+  {
+    "tag": "devops",
+    "videoid": "99999999-9999-9999-9999-999999999999"
+  },
+  {
+    "tag": "react",
+    "videoid": "55555555-5555-5555-5555-555555555555"
+  },
+  {
+    "tag": "python",
+    "videoid": "22222222-2222-2222-2222-222222222222"
+  },
+  {
+    "tag": "python",
+    "videoid": "44444444-4444-4444-4444-444444444444"
+  },
+  {
+    "tag": "frontend",
+    "videoid": "55555555-5555-5555-5555-555555555555"
+  },
+  {
+    "tag": "frontend",
+    "videoid": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+  },
+  {
+    "tag": "docker",
+    "videoid": "33333333-3333-3333-3333-333333333333"
+  },
+  {
+    "tag": "javascript",
+    "videoid": "55555555-5555-5555-5555-555555555555"
+  },
+  {
+    "tag": "javascript",
+    "videoid": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+  },
+  {
+    "tag": "javascript",
+    "videoid": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"
+  },
+  {
+    "tag": "cassandra",
+    "videoid": "11111111-1111-1111-1111-111111111111"
+  },
+  {
+    "tag": "linux",
+    "videoid": "77777777-7777-7777-7777-777777777777"
+  },
+  {
+    "tag": "sql",
+    "videoid": "66666666-6666-6666-6666-666666666666"
+  },
+  {
+    "tag": "backend",
+    "videoid": "cccccccc-cccc-cccc-cccc-cccccccccccc"
+  },
+  {
+    "tag": "kubernetes",
+    "videoid": "99999999-9999-9999-9999-999999999999"
+  },
+  {
+    "tag": "postgresql",
+    "videoid": "66666666-6666-6666-6666-666666666666"
+  },
+  {
+    "tag": "git",
+    "videoid": "88888888-8888-8888-8888-888888888888"
+  },
+  {
+    "tag": "terminal",
+    "videoid": "77777777-7777-7777-7777-777777777777"
+  },
+  {
+    "tag": "database",
+    "videoid": "11111111-1111-1111-1111-111111111111"
+  },
+  {
+    "tag": "database",
+    "videoid": "66666666-6666-6666-6666-666666666666"
+  },
+  {
+    "tag": "typescript",
+    "videoid": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"
+  },
+  {
+    "tag": "redis",
+    "videoid": "cccccccc-cccc-cccc-cccc-cccccccccccc"
+  },
+  {
+    "tag": "k8s",
+    "videoid": "99999999-9999-9999-9999-999999999999"
+  }
+]

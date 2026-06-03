@@ -1,0 +1,1 @@
+redis-cli < programacao/Cadeiras_Uni/CBD/Lab1_125031/CBD-12-batch.txt

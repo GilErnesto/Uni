@@ -1,0 +1,92 @@
+[
+  {
+    "username": "iris",
+    "email": "iris@email.pt",
+    "nome": "Iris Sousa",
+    "time": "2023-02-20 10:00:00.000Z"
+  },
+  {
+    "username": "bob",
+    "email": "bob@email.pt",
+    "nome": "Bob Santos",
+    "time": "2023-01-12 10:00:00.000Z"
+  },
+  {
+    "username": "dave",
+    "email": "dave@email.pt",
+    "nome": "Dave Oliveira",
+    "time": "2023-01-20 08:00:00.000Z"
+  },
+  {
+    "username": "eve",
+    "email": "eve@email.pt",
+    "nome": "Eve Costa",
+    "time": "2023-02-01 09:00:00.000Z"
+  },
+  {
+    "username": "carol",
+    "email": "carol@email.pt",
+    "nome": "Carol Mendes",
+    "time": "2023-01-15 11:00:00.000Z"
+  },
+  {
+    "username": "pedro",
+    "email": "pedro@email.pt",
+    "nome": "Pedro Lopes",
+    "time": "2023-04-01 10:00:00.000Z"
+  },
+  {
+    "username": "frank",
+    "email": "frank@email.pt",
+    "nome": "Frank Rodrigues",
+    "time": "2023-02-05 10:00:00.000Z"
+  },
+  {
+    "username": "joao",
+    "email": "joao@email.pt",
+    "nome": "João Martins",
+    "time": "2023-03-01 11:00:00.000Z"
+  },
+  {
+    "username": "lena",
+    "email": "lena@email.pt",
+    "nome": "Lena Gomes",
+    "time": "2023-03-05 09:00:00.000Z"
+  },
+  {
+    "username": "hugo",
+    "email": "hugo@email.pt",
+    "nome": "Hugo Carvalho",
+    "time": "2023-02-15 09:00:00.000Z"
+  },
+  {
+    "username": "mario",
+    "email": "mario@email.pt",
+    "nome": "Mário Neves",
+    "time": "2023-03-10 10:00:00.000Z"
+  },
+  {
+    "username": "alice",
+    "email": "alice@email.pt",
+    "nome": "Alice Ferreira",
+    "time": "2023-01-10 09:00:00.000Z"
+  },
+  {
+    "username": "nuno",
+    "email": "nuno@email.pt",
+    "nome": "Nuno Pinto",
+    "time": "2023-03-15 11:00:00.000Z"
+  },
+  {
+    "username": "grace",
+    "email": "grace@email.pt",
+    "nome": "Grace Pereira",
+    "time": "2023-02-10 11:00:00.000Z"
+  },
+  {
+    "username": "olga",
+    "email": "olga@email.pt",
+    "nome": "Olga Teixeira",
+    "time": "2023-03-20 09:00:00.000Z"
+  }
+]

@@ -1,0 +1,25 @@
+Diferenças na implementação que posso apontar são o facto do Redis ser super simples na implementação usando comandos nativos do Jedis como o scard() ou hincrby() + expire(), e as keys para uma procura fácil na database, enquanto que no Mongo, mesmo que os comandos sendo nativos, comparativamente com o Redis eram mais complexos, sendo preciso usar aggregate + índices manuais para a solução funcionar.
+
+
+Redis
+Prós: super simples, operações atómicas e nativas.
+Contras: menos escalável para muitos users simultâneos.
+
+MongoDB
+Prós: escala bem com grande quantidade de users, documentos fáceis de acessar.
+Contras: lógica de limite temporal complexa.
+
+Sem dúvidas o mais adequado para este exercício é o Redis.
+
+
+Valores de tempo ao rodar Redis x Mongo:
+
+alínea A
+Redis: 12,665 ms
+Mongo: 170,767 ms
+
+alínea B
+Redis: 12,614 ms
+Mongo: 51,982 ms
+
+Pelos valores apresentados é provado que o Redis não só é mais simples mas também mais rápido. Um dos motivos pode ser o facto de o Mongo usar queries enquanto o Redis usa operações atómicas.

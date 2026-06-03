@@ -1,0 +1,43 @@
+// 125031
+// alinea a e b
+CREATE CONSTRAINT FOR (d:Developer) REQUIRE d.svn_id IS UNIQUE;
+CREATE CONSTRAINT FOR (p:Project) REQUIRE p.project_name IS UNIQUE;
+CREATE CONSTRAINT FOR (o:Organization) REQUIRE o.organization IS UNIQUE;
+
+LOAD CSV WITH HEADERS FROM 'file:///git_selection.csv' AS row
+
+MERGE (d:Developer {svn_id: row.svn_id}) ON CREATE SET d.real_name = row.real_name
+MERGE (p:Project {project_name: row.project_name})
+MERGE (o:Organization {organization: row.organization})
+MERGE (d)-[:MEMBER_OF {role_on_project: row.role_on_project}]->(p)
+MERGE (d)-[:WORKS_ON]->(o)
+
+
+// alinea c
+# 1
+MATCH (d:Developer) RETURN d
+
+#2
+MATCH (d:Developer) RETURN d.real_name
+
+#3
+// MATCH já exige que exista pelo menos um Developer
+MATCH (p:Project)<-[:MEMBER_OF]-(d:Developer) RETURN DISTINCT p
+
+#4
+MATCH (d:Developer)-[:MEMBER_OF]->(p:Project) RETURN d.real_name AS Utilizador, count(p) AS TotalProjetos
+
+#5
+MATCH (d:Developer)-[:MEMBER_OF]->(p:Project) RETURN d.real_name AS Utilizador, count(p) AS TotalProjetos ORDER BY TotalProjetos DESC
+
+#6
+MATCH (p:Project)<-[:MEMBER_OF]-(d:Developer) RETURN p.project_name AS Projeto, count(d) AS TotalMembers
+
+#7
+MATCH (p:Project)<-[:MEMBER_OF {role_on_project: 'Committer'}]-(d:Developer) RETURN p.project_name AS Projeto, count(d) AS TotalCommitters
+
+#8
+MATCH (atm:Developer {svn_id: 'atm'})-[:MEMBER_OF]->(p:Project)<-[:MEMBER_OF]-(outro:Developer) WHERE outro <> atm RETURN DISTINCT atm.real_name AS ATM, outro.real_name AS Outro, p.project_name AS Projeto
+
+#9
+MATCH (atm:Developer {svn_id: 'atm'})-[:MEMBER_OF {role_on_project: 'PMC'}]->(p:Project)<-[:MEMBER_OF {role_on_project: 'Committer'}]-(outro:Developer) WHERE outro <> atm RETURN outro.real_name AS Commiter, p.project_name AS Projeto

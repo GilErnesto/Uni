@@ -1,0 +1,14 @@
+ping
+set key "Good"
+set key1 "Morging"
+get key
+del key key1 key2
+exists key
+set key "apple"
+expire key 1
+set key1 "banana"
+exists key
+move key1 key2
+get key1
+get key2
+shutdown

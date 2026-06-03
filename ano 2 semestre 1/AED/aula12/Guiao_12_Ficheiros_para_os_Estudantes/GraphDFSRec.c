@@ -137,7 +137,16 @@ void GraphDFSRecShowPath(const GraphDFSRec* p, unsigned int v) {
 void GraphDFSRecDisplay(const GraphDFSRec* p) {
   assert(p != NULL);
 
-  // TO BE COMPLETED !!
+  unsigned int numVertices = GraphGetNumVertices(p->graph);
+  
+  printf("Graph DFS Recursive traversal from vertex %u:\n", p->startVertex);
+  printf("Vertex | Marked | Predecessor\n");
+  printf("-------|--------|------------\n");
+  
+  for (unsigned int i = 0; i < numVertices; i++) {
+    printf("  %4u | %6u | %11d\n", i, p->marked[i], p->predecessor[i]);
+  }
+  printf("\n");
 }
 
 // NEW --- Display the Paths-Tree in DOT format

@@ -1,0 +1,9 @@
+services:
+  demo:
+    build: ./demo
+    ports:
+      - "8001:8000"
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"

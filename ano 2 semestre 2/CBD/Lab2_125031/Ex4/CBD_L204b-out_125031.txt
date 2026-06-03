@@ -1,0 +1,146 @@
+Escolha a alinea (A/B) ou 'stop' para sair -> B
+Transação adicionada BsonObjectId{value=69bd9f97d383f1b92c78dd47}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd48}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd49}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd4a}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd4b}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd4c}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd4d}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd4e}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd4f}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd50}
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+
+== Limite atingido para o utilizador: Gil ==
+
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd51}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd52}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd53}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd54}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd55}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd56}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd57}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd58}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd59}
+Transação adicionada BsonObjectId{value=69bd9f98d383f1b92c78dd5a}
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==
+
+
+== Limite atingido para o utilizador: Vale ==

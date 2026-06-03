@@ -1,0 +1,15 @@
+services:
+  ssh:
+    build:
+      context: .
+    container_name: ssh-lab
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Lisbon
+      - USER_NAME=student
+      - PASSWORD_ACCESS=true
+      - USER_PASSWORD=student123
+    ports:
+      - "2222:2222"
+    restart: unless-stopped

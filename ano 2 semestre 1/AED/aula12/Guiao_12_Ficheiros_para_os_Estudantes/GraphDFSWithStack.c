@@ -50,9 +50,40 @@ GraphDFSWithStack* GraphDFSWithStackExecute(Graph* g,
   traversal->startVertex = startVertex;
 
   // CARRY OUT THE ITERATIVE TRAVERSAL
-
-  // TO BE COMPLETED !!
-
+  
+  // Create a stack for the traversal
+  Stack* stack = StackCreate(numVertices);
+  
+  // Push the start vertex and mark it as visited
+  StackPush(stack, startVertex);
+  traversal->marked[startVertex] = 1;
+  
+  // Iterative DFS using stack
+  while (!StackIsEmpty(stack)) {
+    unsigned int vertex = StackPop(stack);
+    
+    // Get the array of adjacent vertices
+    unsigned int* neighbors = GraphGetAdjacentsTo(g, vertex);
+    
+    // Iterate through adjacent vertices
+    // Note: To match recursive DFS order, we need to push in reverse order
+    for (int i = neighbors[0]; i >= 1; i--) {
+      unsigned int w = neighbors[i];
+      
+      // If not yet visited
+      if (traversal->marked[w] == 0) {
+        traversal->marked[w] = 1;
+        traversal->predecessor[w] = vertex;
+        StackPush(stack, w);
+      }
+    }
+    
+    // Free the neighbors array
+    free(neighbors);
+  }
+  
+  // Clean up
+  StackDestroy(&stack);
   return traversal;
 }
 
@@ -116,7 +147,16 @@ void GraphDFSWithStackShowPath(const GraphDFSWithStack* p, unsigned int v) {
 void GraphDFSWithStackDisplay(const GraphDFSWithStack* p) {
   assert(p != NULL);
 
-  // TO BE COMPLETED !!
+  unsigned int numVertices = GraphGetNumVertices(p->graph);
+  
+  printf("Graph DFS With Stack traversal from vertex %u:\n", p->startVertex);
+  printf("Vertex | Marked | Predecessor\n");
+  printf("-------|--------|------------\n");
+  
+  for (unsigned int i = 0; i < numVertices; i++) {
+    printf("  %4u | %6u | %11d\n", i, p->marked[i], p->predecessor[i]);
+  }
+  printf("\n");
 }
 
 // NEW --- Display the Paths-Tree in DOT format

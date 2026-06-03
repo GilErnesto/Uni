@@ -1,0 +1,69 @@
+Escolha a alinea (A/B) ou 'stop' para sair -> A
+mar. 20, 2026 7:19:58 DA TARDE com.mongodb.internal.diagnostics.logging.Loggers shouldUseSLF4J
+WARNING: SLF4J not found on the classpath.  Logging is disabled for the 'org.mongodb.driver' component
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee1b}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee1c}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee1d}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee1e}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee1f}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee20}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee21}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee22}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee23}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee24}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee25}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee26}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee27}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee28}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee29}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee2a}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee2b}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee2c}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee2d}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee2e}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee2f}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee30}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee31}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee32}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee33}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee34}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee35}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee36}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee37}
+
+== Limite atingido para o utilizador: Gil ==
+
+== Limite atingido para o utilizador: Gil ==
+
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee38}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee39}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee3a}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee3b}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee3c}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee3d}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee3e}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee3f}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee40}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee41}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee42}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee43}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee44}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee45}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee46}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee47}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee48}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee49}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee4a}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee4b}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee4c}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee4d}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee4e}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee4f}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee50}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee51}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee52}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee53}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee54}
+Transação adicionadaBsonObjectId{value=69bd9ddeb70a7e4abbf3ee55}
+
+== Limite atingido para o utilizador: Vale ==
